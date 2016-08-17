@@ -1,2 +1,42 @@
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+// $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+// @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$nav-backdrop: #3e3e3e;
+$true-back: #000;
+
+nav {
+  color: $nav-backdrop;
+  height: 300px;
+  width: 1800px;
+}
+
+// .pets-nav {
+//   background: $nav-backdrop;
+//   border: 2px $true-back;
+//   display: inline;
+//   height: 150px;
+//   width: 1000px;
+// }
+
+.button-group {
+  display: inline;
+  // width: 100%;
+}
+
+.nav-button {
+  display: inline;
+  height: 100px;
+  width: 250px;
+}
+
+div > button {
+  list-style: none;
+}
+
+body {
+  height: 100% auto;
+  width: 100% auto;
+}
+
+.form-container {
+  display: block;
+}

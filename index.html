@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Pet App</title>
-
-      <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
-    </body>
+  <head>
+    <title>Pet App</title>
+    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body class="container-fluid">
+    <nav class = "pets-nav" role="navigation">
+      <div class="button-group">
+        <button id="sign-in"class="nav-button"><a href="#"></a>sign-up</button>
+        <button id="sign-up"class="nav-button"><a href="#"></a>sign-in</button>
+        <button id="logout"class="nav-button"><a href="#"></a>logout</button>
+        <button id="profile"class="nav-button"><a href="#"></a>profile</button>
+        <button id="calendar"class="nav-button"><a href="#"></a>calendar</button>
+      </div>
+    </nav>
+  <div class= "main-container">
+    <div class="form-container">
+      <fieldset class="sign-up-actions">
+        <form class="input-group">
+          <input type="text" class="form-control sign-up"
+                name="credentials[email]" placeholder="email">
+          <input type="text" class="form-control sign-up"
+                name="credentials[given_name]" placeholder="given name">
+          <input type="text" class="form-control sign-up"
+                name="credentials[surname]" placeholder="surname">
+          <input type="text" class="form-control sign-up"
+                name="credentials[password]" placeholder="password">
+          <input type="text" class="form-control sign-up"
+                name="credentials[password_confirmation]" placeholder="confirm password">
+          <input id="register" type="button" name="submit" value="submit">
+          <input type="button" name="cancel" value="cancel">
+        </form>
+      </fieldset>
+      <fieldset class="sign-in-actions">
+        <form class="input-group">
+          <input type="text" class="form-control sign-in"
+              name="credentials[email]" placeholder="email">
+          <input type="text" name="credentials[password]" placeholder="password">
+          <input id="log-in" type="button" name="submit" value="submit">
+          <input type="button" name="cancel" value="cancel">
+        </form>
+        </fieldset>
+        <fieldset class="change-pw-actions">
+          <form class="input-group">
+            <input type="text" class="form-control change-pw"
+                  name="passwords[old]" placeholder="old password">
+            <input type="text" class="form-control change-pw"
+                  name="passwords[new]" placeholder="new password">
+            <input id="change-pw" type="button" name="submit" value="submit">
+            <input type="button" name="cancel" value="cancel">
+          </form>
+        </fieldset>
+        <fieldset class= "logout-actions">
+          <form class="input-group">
+            <input id="sign-out" type="button" name="logout" value="logout">
+          </form>
+      </fieldset>
+    </div>
+    <section class="About">
+     <h1>About the site</h1>
+    </section>
+    <article>
+      <div class="photo-vet">
+        <div class= "quote-vet">
+        </div>
+      </div>
+   </article>
+ </div>
+</body>
 </html>
