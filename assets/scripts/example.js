@@ -1,3 +1,6 @@
 'use strict';
+const authEvents = require('/auth/events.js');
 
-module.exports = true;
+
+authEvents.addHandlers();
+});
