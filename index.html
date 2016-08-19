@@ -32,9 +32,11 @@
               <ul class="dropdown-menu">
                 <li id="register"data-toggle="modal" data-target="#signUpModal"
                   class="nav-button"><a href="#">sign-up</a></li>
-                <li id="log-in"class="nav-button"><a href="#">sign-in</a></li>
-                <li id="change-pw"class="nav-button"><a href="#">change-password</a></li>
-                <li id="log-out"class="nav-button"><a href="#">sign-out</a></li>
+                <li id="log-in" data-toggle= "modal" data-target="#signInModal"
+                  class="nav-button"><a href="#">sign-in</a></li>
+                <li id="change-pw" data-toggle= "modal" data-target="#changePWModal"
+                  class="nav-button"><a href="#">change-password</a></li>
+                <li id="sign-out"class="nav-button"><a href="#">sign-out</a></</li>
               </ul>
             </li>
           </ul>
@@ -67,52 +69,54 @@
                 </div>
               </div>
             </div>
-            <!-- <fieldset class="signUp-actions">
-            <label>Sign-up</label>
-            <form class="input-group">
-            <input type="text" class="form-control signUp"
-            name="credentials[email]" placeholder="email">
-            <input type="text" class="form-control signUp"
-            name="credentials[given_name]" placeholder="given name">
-            <input type="text" class="form-control signUp"
-            name="credentials[surname]" placeholder="surname">
-            <input type="password" class="form-control signUp"
-            name="credentials[password]" placeholder="password">
-            <input type="password" class="form-control signUp"
-            name="credentials[password_confirmation]" placeholder="confirm password">
-            <input id="sign-up" type="button" name="submit" value="submit">
-            <input type="button" name="cancel" value="cancel">
-          </form> -->
-          <fieldset class="sign-in-actions">
-            <label>Sign-in</label>
-            <form class="input-group">
-              <input type="text" class="form-control sign-in"
-              name="credentials[email]" placeholder="email">
-              <input type="password" name="credentials[password]" placeholder="password">
-              <input id="sign-in" type="button" name="submit" value="submit">
-              <input type="button" name="cancel" value="cancel">
-            </form>
-          </fieldset>
-          <fieldset class="change-password-actions">
-            <label>Change Password</label>
-            <form class="input-group">
-              <input type="password" class="form-control change-pw"
-              name="passwords[old]" placeholder="old password">
-              <input type="password" class="form-control change-pw"
-              name="passwords[new]" placeholder="new password">
-              <input id="change-password" type="button" name="submit" value="submit">
-              <input type="button" name="cancel" value="cancel">
-            </form>
-          </fieldset>
-          <fieldset class= "sign-out-actions">
-            <label>Sign-out</label>
-            <form class="input-group">
-              <input id="sign-out" type="button" name="sign-out" value="sign out">
-            </form>
-          </fieldset>
+            <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="SignInLabel"><label>Sign-In</label></h4>
+                  </div>
+                  <div class="modal-body">
+                    <form id="sign-in" action="#">
+                      <legend>Email<input type="text" class="form-control sign-in"
+                          name="credentials[email]" placeholder="email"></legend>
+                      <legend>Password<input type="password" name="credentials[password]" placeholder="password"></legend>
+                  <div class="modal-footer">
+                    <input id="user-sign-in" type="submit" name="submit" value="submit">
+                    <input type="button" class="btn btn-default" value="close" data-dismiss="modal">
+                  </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="changePWModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="changePWLabel"><label>Change-Password</label></h4>
+                  </div>
+                  <div class="modal-body">
+                    <form id="change-password" action="#">
+                      <legend>Password</legend><input type="password" class="form-control change-pw"
+                        name="passwords[old]" placeholder="old password">
+                      <legend>New Password<input type="password" class="form-control change-pw"
+                        name="passwords[new]" placeholder="new password"></legend>
+                        <div class="modal-footer">
+                          <input id="user-change-password" type="submit" name="submit" value="submit">
+                          <input type="button" name="cancel" value="cancel" data-dismiss="modal">
+                        </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
         <section class="About">
-          <h1>About the site</h1>
+        <h1>About the site</h1>
         </section>
         <article>
           <div class="photo-vet">
@@ -120,6 +124,5 @@
             </div>
           </div>
         </article>
-      </div>
     </body>
-    </html>
+  </html>
