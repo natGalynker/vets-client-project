@@ -8,10 +8,8 @@ const ui = require('./ui');
 
 const onSignUp = function (event) {
   let data = getFormFields(this);
-  console.log(data +" test");
-  debugger;
+  console.log(" test");
   event.preventDefault();
-  debugger;
   api.signUp(data)
   .done(ui.success)
   .fail(ui.failure);
@@ -41,7 +39,9 @@ const onSignOut = function onSignOut(event) {
 };
 
 const addHandlers = () => {
-  $("#sign-up").on('submit', onSignUp);
+  console.log('working');
+  //grab the ID of the form these handlers not the button IDs
+  $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
@@ -49,5 +49,5 @@ const addHandlers = () => {
 
 };
 module.exports = {
-  addHandlers,
+  addHandlers
 };
