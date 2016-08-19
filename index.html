@@ -1,72 +1,129 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Pet App</title>
-    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-  </head>
-  <body class="container-fluid">
-    <nav class = "pets-nav" role="navigation">
-      <div class="button-group">
-        <button class="nav-button"><a href="#"></a>sign-up</button>
-        <button id="sign-up"class="nav-button"><a href="#"></a>sign-in</button>
-        <button id="logout"class="nav-button"><a href="#"></a>logout</button>
-        <button id="profile"class="nav-button"><a href="#"></a>profile</button>
-        <button id="calendar"class="nav-button"><a href="#"></a>calendar</button>
+<head>
+  <title>Pet App</title>
+  <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Pet Link</a>
       </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="view-profile"class="inactive">Profile<a href="#"></a>
+          <li id="calendar-view"class="inactive">Calendar<a href="#"></a>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+              role="button" aria-haspopup="true" aria-expanded="false">Menu
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li id="register"data-toggle="modal" data-target="#signUpModal"
+                  class="nav-button"><a href="#">sign-up</a></li>
+                <li id="log-in"class="nav-button"><a href="#">sign-in</a></li>
+                <li id="change-pw"class="nav-button"><a href="#">change-password</a></li>
+                <li id="log-out"class="nav-button"><a href="#">sign-out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
     </nav>
-  <div class= "main-container">
-    <div class="form-container">
-      <fieldset class="sign-up-actions">
-        <form class="input-group">
-          <input type="text" class="form-control sign-up"
-                name="credentials[email]" placeholder="email">
-          <input type="text" class="form-control sign-up"
-                name="credentials[given_name]" placeholder="given name">
-          <input type="text" class="form-control sign-up"
-                name="credentials[surname]" placeholder="surname">
-          <input type="password" class="form-control sign-up"
-                name="credentials[password]" placeholder="password">
-          <input type="password" class="form-control sign-up"
-                name="credentials[password_confirmation]" placeholder="confirm password">
-          <input id="register" type="button" name="submit" value="submit">
-          <input type="button" name="cancel" value="cancel">
-        </form>
-      </fieldset>
-      <fieldset class="sign-in-actions">
-        <form class="input-group">
-          <input type="text" class="form-control sign-in"
-              name="credentials[email]" placeholder="email">
-          <input type="password" name="credentials[password]" placeholder="password">
-          <input id="log-in" type="button" name="submit" value="submit">
-          <input type="button" name="cancel" value="cancel">
-        </form>
-        </fieldset>
-        <fieldset class="change-pw-actions">
-          <form class="input-group">
-            <input type="password" class="form-control change-pw"
-                  name="passwords[old]" placeholder="old password">
-            <input type="password" class="form-control change-pw"
-                  name="passwords[new]" placeholder="new password">
-            <input id="change-pw" type="button" name="submit" value="submit">
+      <div class= "main-container">
+        <div class="form-container">
+          <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="SignUpLabel">Sign-Up</h4>
+                </div>
+                <div class="modal-body">
+                  <form id ="user-sign-up" action="#">
+                    <legend>Email<input type="text" class="form-control signUp"
+                      name="credentials[email]" placeholder="email"></legend>
+                    <legend>First Name<input type="text" class="form-control signUp"
+                      name="credentials[given_name]" placeholder="given name"></legend>
+                    <legend>Last Name<input type="text" class="form-control signUp"
+                      name="credentials[surname]" placeholder="surname"></legend>
+                    <legend>Password<input type="password" class="form-control signUp"
+                      name="credentials[password]" placeholder="password"></legend>
+                    <legend>Confirm<input type="password" class="form-control signUp"
+                      name="credentials[password_confirmation]" placeholder="confirm password"></legend>
+                      <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="close">
+                        <input name="submit"type="submit" id="sign-up"class="btn btn-primary" value="Submit">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <fieldset class="signUp-actions">
+            <label>Sign-up</label>
+            <form class="input-group">
+            <input type="text" class="form-control signUp"
+            name="credentials[email]" placeholder="email">
+            <input type="text" class="form-control signUp"
+            name="credentials[given_name]" placeholder="given name">
+            <input type="text" class="form-control signUp"
+            name="credentials[surname]" placeholder="surname">
+            <input type="password" class="form-control signUp"
+            name="credentials[password]" placeholder="password">
+            <input type="password" class="form-control signUp"
+            name="credentials[password_confirmation]" placeholder="confirm password">
+            <input id="sign-up" type="button" name="submit" value="submit">
             <input type="button" name="cancel" value="cancel">
-          </form>
-        </fieldset>
-        <fieldset class= "logout-actions">
-          <form class="input-group">
-            <input id="sign-out" type="button" name="logout" value="logout">
-          </form>
-      </fieldset>
-    </div>
-    <section class="About">
-     <h1>About the site</h1>
-    </section>
-    <article>
-      <div class="photo-vet">
-        <div class= "quote-vet">
+          </form> -->
+          <fieldset class="sign-in-actions">
+            <label>Sign-in</label>
+            <form class="input-group">
+              <input type="text" class="form-control sign-in"
+              name="credentials[email]" placeholder="email">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input id="sign-in" type="button" name="submit" value="submit">
+              <input type="button" name="cancel" value="cancel">
+            </form>
+          </fieldset>
+          <fieldset class="change-password-actions">
+            <label>Change Password</label>
+            <form class="input-group">
+              <input type="password" class="form-control change-pw"
+              name="passwords[old]" placeholder="old password">
+              <input type="password" class="form-control change-pw"
+              name="passwords[new]" placeholder="new password">
+              <input id="change-password" type="button" name="submit" value="submit">
+              <input type="button" name="cancel" value="cancel">
+            </form>
+          </fieldset>
+          <fieldset class= "sign-out-actions">
+            <label>Sign-out</label>
+            <form class="input-group">
+              <input id="sign-out" type="button" name="sign-out" value="sign out">
+            </form>
+          </fieldset>
         </div>
+        <section class="About">
+          <h1>About the site</h1>
+        </section>
+        <article>
+          <div class="photo-vet">
+            <div class= "quote-vet">
+            </div>
+          </div>
+        </article>
       </div>
-   </article>
- </div>
-</body>
-</html>
+    </body>
+    </html>
