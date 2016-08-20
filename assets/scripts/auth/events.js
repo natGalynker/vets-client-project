@@ -6,6 +6,10 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const  api= require('./api');
 const ui = require('./ui');
 
+
+const test = document.getElementById('calendar');
+test.className = test.className + 'disabled';
+
 const onSignUp = function (event) {
   let data = getFormFields(this);
   console.log(" test");
@@ -43,8 +47,11 @@ const addHandlers = () => {
   //grab the ID of the form these handlers not the button IDs
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
+  $('#calendar').addClass('disabled');
+  $('sign-in').find('input:text, input:password, select, textarea').val('');
   $('#sign-out').on('click', onSignOut);
   $('#change-password').on('submit', onChangePassword);
+  // $('#calendar').addClass('disabled');
   // $('#register').on('click', displayForm);
 
 };

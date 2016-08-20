@@ -3,32 +3,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $nav-backdrop: #3e3e3e;
 $true-back: #000;
 
-.form-container {
-  display: block;
-}
-
-.sign-up-actions {
-  display: initial;
-}
-
-.sign-in-actions {
-  display: initial;
-}
-
-.change-password-actions {
-  display: initial;
-}
-
-.sign-out-actions {
-  display: initial;
-}
-
-.main-container {
-  margin-left: 5px auto;
-  margin-right: 5px auto;
-}
 
 input {
   margin: auto 4px;
   padding: auto 4px;
+}
+
+
+.register {
+  display: initial;
+}
+
+.disable-links {
+  display: none;
 }
