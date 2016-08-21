@@ -2,6 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $nav-backdrop: #3e3e3e;
 $true-back: #000;
+$is-clickable: #0091ff;
 
 
 input {
@@ -14,6 +15,16 @@ input {
   display: initial;
 }
 
-.disable-links {
-  display: none;
+.enable-links {
+  @include opacity(1.5);
+  color: $is-clickable !important;
+  pointer-events: initial;
+
+}
+
+.btn.btn-lg.profile,
+.btn.btn-lg.calendar,
+.btn.btn-lg.get-pets {
+  @include opacity(.5);
+  pointer-events: none;
 }
