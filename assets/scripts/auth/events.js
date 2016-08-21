@@ -79,7 +79,6 @@ const onRemovePet = function onRemovePet(event) {
   .done(ui.onSuccess)
   .fail(ui.failure);
 };
-};c
 
 const addHandlers = () => {
   console.log('working');

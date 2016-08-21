@@ -37,7 +37,7 @@ const createPet = function (data) {
   console.log(app.user.token);
   return $.ajax({
   url: app.api + '/pets',
-  method: 'PATCH',
+  method: 'POST',
   headers: {
     Authorization: 'Token token=' + app.user.token,
   },

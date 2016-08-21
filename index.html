@@ -19,7 +19,7 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="btn btn-lg profile"><a href="#" id ="profile">Profile</a></li>
+          <li class="btn btn-lg profile" data-toggle ="modal" data-target=#profileModal><a href="#" id ="profile">Profile</a></li>
           <li class="btn btn-lg calendar" data-toggle="modal" data-target="#calendarLaunchModal"><a href="#" id ="calendar">Calendar</a></li>
           <li class="btn btn-lg get-pets" data-toggle= "modal" data-target="#petModal"><a href="#" id ="pets">View Your Pets</a></li>
         </ul>
@@ -111,24 +111,55 @@
                 </div>
               </div>
             </div>
-            <div class="modal fade" id="getPetsByIdModal" tabindex="-1" role="dialog" aria-labelledby="petsIdModalLabel">
+            <div class="modal fade" id="petModal" tabindex="-1" role="dialog" aria-labelledby="petModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content get-id-append">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="petsIdModalLabel">Get</h4>
+                  <h4 class="modal-title" id="petModalLabel">Get</h4>
                 </div>
                 <div class="modal-body">
                   <form id="pet-id">
                     <fieldset>
                       <input type="text" name="id" class="pet-id-submit" placeholder= "Pet ID">
-                      <input type="submit" name="submit" class= "get-pet-id-btn" value="View Your Pet">
+                      <input type="submit" name="submit" class= "get-pet-id-btn" value="View Pet">
+                      <input type="submit" name="submit" value="View All Pets"id="display-pets">
                     </fieldset>
                   </form>
                 </div>
               </div>
             </div>
           </div>
+          <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="profileModalLabel"><label>Sign-In</label></h4>
+                </div>
+                <div class="modal-body">
+                  <form id="create-pet">
+                    <!-- <legend>Owner Name<input type="text" class="form-control pet-profile"
+                        name="Owner-name" placeholder="Name of Owner"></legend>
+                    <legend>Vet Name<input type="text" class="form-control pet-profile"
+                            name="Vet-name" placeholder="Vet Name"></legend> -->
+                    <legend>Pet Name<input type="text" class="form-control pet-profile"
+                        name="pet[email]" placeholder="email"></legend>
+                    <legend>Breed<input type="text" name="pet[breed]"
+                      placeholder="animal breed"></legend>
+                    <legend>Guessed Date of Birth<input type="text" class="form-control pet-profile"
+                      name="pet[born_on]" placeholder="date of birth"></legend>
+                    <legend>Sex of Animal<input type="text" class="form-control pet-profile"
+                        name="pet[born_on]" placeholder="Male of Female"></legend>
+                    <div class="modal-footer">
+                  <input id="create-new-pet" type="submit" name="submit" value="submit">
+                  <input type="button" class="btn btn-default" value="close" data-dismiss="modal">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
       <section class="About">

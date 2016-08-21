@@ -83,8 +83,6 @@ module.exports = {
   signOutSuccess,
   createPetSuccess,
   showPetsSuccess,
-  onSuccess,
-  getPetsByIdSuccess,
-  getPetsById
+  onSuccess
   // getPetsByIdSuccess
 };
