@@ -57,7 +57,7 @@ const signInSuccess = (data) =>{
   };
   const createPetSuccess = (data) => {
     app.pet = data.pet;
-    console.log(app);
+    console.log(data.pet);
   };
 
   const showPetsSuccess = (data) =>  {

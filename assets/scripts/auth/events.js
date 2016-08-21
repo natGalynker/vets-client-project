@@ -92,7 +92,7 @@ const addHandlers = () => {
   $('#sign-out').on('click', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#create-pet').on('submit', onCreatePet);
-  $('display-pets').on('click', onShowPets);
+  $('#display-pets').on('click', onShowPets);
   $('#pet-id').on('submit', onGetPetsById);
   $('pet-update').on('submit', onUpdatePet);
   $('#remove-pet').on('click', onRemovePet);

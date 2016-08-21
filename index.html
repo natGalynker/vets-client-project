@@ -139,18 +139,16 @@
                 </div>
                 <div class="modal-body">
                   <form id="create-pet">
-                    <!-- <legend>Owner Name<input type="text" class="form-control pet-profile"
-                        name="Owner-name" placeholder="Name of Owner"></legend>
-                    <legend>Vet Name<input type="text" class="form-control pet-profile"
-                            name="Vet-name" placeholder="Vet Name"></legend> -->
+                    <legend>Owner Name<input type="text" class="form-control pet-profile"
+                        name="pet[owner_name]" placeholder="Name of Owner"></legend>
                     <legend>Pet Name<input type="text" class="form-control pet-profile"
-                        name="pet[email]" placeholder="email"></legend>
+                        name="pet[name]" placeholder="pet name"></legend>
                     <legend>Breed<input type="text" name="pet[breed]"
                       placeholder="animal breed"></legend>
-                    <legend>Guessed Date of Birth<input type="text" class="form-control pet-profile"
+                    <legend>Pet Born On <input type="date" class="form-control pet-profile"
                       name="pet[born_on]" placeholder="date of birth"></legend>
                     <legend>Sex of Animal<input type="text" class="form-control pet-profile"
-                        name="pet[born_on]" placeholder="Male of Female"></legend>
+                        name="pet[gender]" placeholder="Male of Female"></legend>
                     <div class="modal-footer">
                   <input id="create-new-pet" type="submit" name="submit" value="submit">
                   <input type="button" class="btn btn-default" value="close" data-dismiss="modal">
