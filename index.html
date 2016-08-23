@@ -56,203 +56,214 @@
               <form id ="sign-up" action="#">
                 <legend>Email<input type="text" class="form-control signUp"
                   name="credentials[email]" placeholder="email"></legend>
-                  <legend>Password<input type="password" class="form-control signUp"
-                    name="credentials[password]" placeholder="password"></legend>
-                    <legend>Confirm<input type="password" class="form-control signUp"
-                      name="credentials[password_confirmation]" placeholder="confirm password"></legend>
-                      <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="close">
-                        <input type="submit" id="user-sign-up"class="btn btn-primary" value="Submit">
-                      </div>
-                    </form>
+                <legend>Password<input type="password" class="form-control signUp"
+                  name="credentials[password]" placeholder="password"></legend>
+                <legend>Confirm<input type="password" class="form-control signUp"
+                  name="credentials[password_confirmation]" placeholder="confirm password"></legend>
+                  <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="close">
+                    <input type="submit" id="user-sign-up"class="btn btn-primary" value="Submit">
                   </div>
-                </div>
+                </form>
               </div>
             </div>
-            <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
+          </div>
+        </div>
+        <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="SignInLabel"><label>Sign-In</label></h4>
                   </div>
-                  <div class="modal-body">
-                    <form id="sign-in" action="#">
+                <div class="modal-body">
+                  <form id="sign-in" action="#">
                       <legend>Email<input type="text" class="form-control sign-in"
                         name="credentials[email]" placeholder="email"></legend>
-                        <legend>Password<input type="password" name="credentials[password]" placeholder="password"></legend>
+                      <legend>Password<input type="password" name="credentials[password]" placeholder="password"></legend>
                         <div class="modal-footer">
-                            <input type="submit" name="submit" id="user-sign-in" value="submit">
-                            <input type="button" name="cancel" value="cancel" data-dismiss="modal">
-                          </div>
-                      </form>
-                    </div>
-                  </div>
+                          <input type="submit" name="submit" id="user-sign-in" value="submit">
+                          <input type="button" name="cancel" value="cancel" data-dismiss="modal">
+                        </div>
+                  </form>
                 </div>
               </div>
-              <div class="modal fade" id="changePWModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="changePWLabel"><label>Change-Password</label></h4>
-                    </div>
-                    <div class="modal-body">
-                      <form id="change-password" action="#">
+            </div>
+          </div>
+          <div class="modal fade" id="changePWModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="changePWLabel"><label>Change-Password</label></h4>
+                </div>
+                <div class="modal-body">
+                    <form id="change-password" action="#">
                         <legend>Password</legend><input type="password" class="form-control change-pw"
-                        name="passwords[old]" placeholder="old password">
+                          name="passwords[old]" placeholder="old password">
                         <legend>New Password<input type="password" class="form-control change-pw"
                           name="passwords[new]" placeholder="new password"></legend>
-                        <div class="modal-footer">
-                        <input id="user-change-password" type="submit" name="submit" value="submit">
-                        <input type="button" name="cancel" value="cancel" data-dismiss="modal">
-                        </div>
-                      </form>
-                    </div>
-                  </div>
+                          <div class="modal-footer">
+                            <input id="user-change-password" type="submit" name="submit" value="submit">
+                            <input type="button" name="cancel" value="cancel" data-dismiss="modal">
+                          </div>
+                    </form>
                 </div>
               </div>
-              <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
+            </div>
+          </div>
+          <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="profileModalLabel"><label>Sign-In</label></h4>
-                    </div>
-                    <div class="modal-body">
-                      <form id="create-pet">
-                        <div class="first">
-                          <legend>Owner Name<input type="text" class="form-control pet-profile"
-                              name="pet[owner_name]" placeholder="Name of Owner"></legend>
-                          <legend>Pet Name<input type="text" class="form-control pet-profile"
-                              name="pet[name]" placeholder="pet name"></legend>
-                          <legend>Breed<input type="text" name="pet[breed]"
-                              placeholder="animal breed"></legend>
-                          <legend>Pet Born On <input type="date" class="form-control pet-profile"
-                              name="pet[born_on]" placeholder="date of birth"></legend>
-                          <legend>Sex of Animal<input type="text" class="form-control pet-profile"
-                              name="pet[gender]" placeholder="Male of Female"></legend>
-                        </div>
-                        <div class="second">
-                          <legend >Medical Pet Info</legend>
+                      <h4 class="modal-title" id="profileModalLabel"><label>Sign-In</label></h4>
+                  </div>
+                  <div class="modal-body">
+                    <form id="create-pet">
+                      <div class="first">
+                        <legend>Owner Name<input type="text" class="form-control pet-profile"
+                            name="pet[owner_name]" placeholder="Name of Owner"></legend>
+                        <legend>Pet Name<input type="text" class="form-control pet-profile"
+                            name="pet[name]" placeholder="pet name"></legend>
+                        <legend>Breed<input type="text" name="pet[breed]"
+                            placeholder="animal breed"></legend>
+                        <legend>Pet Born On <input type="date" class="form-control pet-profile"
+                            name="pet[born_on]" placeholder="date of birth"></legend>
+                        <legend>Sex of Animal<input type="text" class="form-control pet-profile"
+                            name="pet[gender]" placeholder="Male of Female"></legend>
+                      </div>
+                      <div class="second">
+                        <legend >Medical Pet Info</legend>
                           <fieldset>Date of Rabies Vaccine<input class ="form-control pet-profile"
                             name="pet[rabes_shot_date]" type="date"
-                            placeholder="Date of last raboes vaccinne"></fieldset>
-                            <div class="btn-group" data-toggle="buttons-radio">
-                              <fieldset><span>Only Pet?</span>
+                            placeholder="Date of last raboes vaccinne">
+                          </fieldset>
+                          <div class="btn-group" data-toggle="buttons-radio">
+                            <fieldset>
+                              <h2><span>Only Pet?</span></h2>
                                 <label class="radio-inline">
                                   <input type="radio" class= "btn btn-info" name="pet[only_pet]">Yes
                                 </label>
                                 <label class="radio-inline">
                                   <input type="radio"class="btn btn-primary" name="pet[only_pet]">No
                                 </label>
-                              </fieldset>
-                            </div>
+                            </fieldset>
                           </div>
-                          <div class = "third">
-                            <div class="btn-group" data-toggle="buttons-radio">
-                              <fieldset><span>Feral?</span>
-                                <label class="radio-inline">
-                                  <input type="radio" class="btn btn-info">
-                                </label>
-                                <label class="radio-inline">
-                                  <input type="radio" class="btn btn-primary">No
-                                </label>
-                              </fieldset>
-                            </div>
-                          </div>
-                          <div class="fourth">
-                            <div class="btn-group" data-toggle="buttons-radio">
-                              <fieldset><span>Neutered?</span>
-                                <label class="radio-inline">
+                      </div>
+                      <div class="third">
+                        <div class="btn-group" data-toggle="buttons-radio">
+                          <fieldset>
+                            <h2><span>Neutered?</span></h2>
+                              <label class="radio-inline">
                                   <input type="radio" class="btn btn-info"name="pet[neutered]">Yes
-                                </label>
-                                <label class="radio-inline">
+                              </label>
+                              <label class="radio-inline">
                                   <input type="radio" class="btn btn-primary"name="pet[neutered]">No
-                                </label>
+                              </label>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="fourth">
+                        <div class="btn-group" data-toggle="buttons-radio">
+                            <fieldset>
+                                <h2><span>Declawed?</span></h2>
+                                  <label class="radio-inline">
+                                    <input type="radio" name="pet[declawed]" class="btn btn-info">Yes
+                                  </label>
+                                  <label class="radio-inline">
+                                    <input type="radio" name="pet[declawed]" class="btn btn-primary">No
+                                  </label>
+                            </fieldset>
+                        </div>
+                      </div>
+                      <div class="first">
+                          <div class="btn-group" data-toggle="buttons-radio">
+                              <fieldset>
+                                  <h2><span>Feral?</span></h2>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="pet[feral]" class="btn btn-info">Yes
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="pet[feral]" class="btn btn-primary">No
+                                    </label>
                               </fieldset>
-                            </div>
                           </div>
-                          <div class="fifth">
-                            <div class="btn-group" data-toggle="buttons-radio">
-                              <fieldset><span>Declawed?</span>
-                                <label class="radio-inline">
-                                  <input type="radio" name="pet[declawed]" class="btn btn-info">Yes
-                                </label>
-                                <label class="radio-inline">
-                                  <input type="radio" name="pet[declawed]" class="btn btn-primary">No
-                                </label>
-                              </fieldset>
-                            </div>
+                      </div>
+                      <div class="modal-footer">
+                          <input id="create-new-pet" type="submit" name="submit" value="submit">
+                          <input id="refresh-new-pet"type="button" class="btn btn-default" value="close" data-dismiss="modal">
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="editPetModal" tabindex="-1" role="dialog" aria-labelledby="editPeteModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="editPetModalLabel"><label>Sign-In</label></h4>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-pet" action="#">
+                        <div class="patch">
+                            <input placeholder="Pet-id"id="edit-pet-id" type="text" name="pet[id]">
+                            <legend>
+                            <input type="text" class="form-control pet-edit"
+                              placeholder="Name of Old Owner">
+                            <input type="text" class="form-control pet-edit"
+                              placeholder="Name of Old Owner" name="pet[owner_name]">
+                            </legend>
+                            <legend>
+                              <input type="text" class="form-control pet-edit"
+                              placeholder="Old Pet Name">
+                              <input type="text" name="pet[name]" class="form-control pet-edit"
+                              placeholder="New Pet Name">
+                            </legend>
+                              <div class="modal-footer">
+                                <input type="button" class="btn btn-default" value="close" data-dismiss="modal">
+                                <input id="update-pet" type="submit" value="submit">
+                              </div>
                           </div>
-                          <div class="modal-footer">
-                            <input id="create-new-pet" type="submit" name="submit" value="submit">
-                            <input id="refresh-new-pet"type="button" class="btn btn-default" value="close" data-dismiss="modal">
-                          </div>
-                        </form>
-                    </div>
+                      </form>
                   </div>
                 </div>
               </div>
-              <div class="modal fade" id="editPetModal" tabindex="-1" role="dialog" aria-labelledby="editPeteModalLabel">
+            </div>
+              <div class="modal fade" id="deletePetModal" tabindex="-1" role="dialog" aria-labelledby="deletePetModalLabel">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="editPetModalLabel"><label>Sign-In</label></h4>
+                      <h4 class="modal-title" id="deletePetModalLabel">Get</h4>
                     </div>
                     <div class="modal-body">
-                      <form id="edit-pet" action="#">
-                        <div class="first">
-                          <legend>Owner Name<input type="text" class="form-control pet-profile"
-                           placeholder="Name of Owner"></legend>
-                            <legend>New Owner<input type="text"
-                              Placeholder="New Owner"> </legend>
-                              <input id="edit-pet-id" type="text" name="pet[id]">
-                            </div>
-                                </div>
-                              </div>
-                              <div class="modal-footer">
-                                <input type="button" class="btn btn-default" value="close" data-dismiss="modal">
-                                <input id="update-pet" type="submit" name="submit" value="submit">
-                              </div>
-                          </form>
-                        </div>
-                        <div class="modal fade" id="deletePetModal" tabindex="-1" role="dialog" aria-labelledby="deletePetModalLabel">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="deletePetModalLabel">Get</h4>
-                              </div>
-                              <div class="modal-body">
-                                <form id="delete-pet" action="#">
-                                  <fieldset>
-                                    <input type="text" name="pet[id]" id="pet-delete-id" placeholder="ID of pet">
-                                    <input type="submit" name="submit" class= "delete-id-pet" value="Delete Pet">
-                                  </fieldset>
-                                </form>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <section class="About">
-                      <h4><span></span></h4>
-                        <div class ="pet-display-append">
-                          <h4></h4>
-                        </div>
-                      <h1>About the site</h1>
-                      </section>
-                        <article>
-                        <div class="photo-vet">
-                          <div class= "quote-vet">
-                        </div>
-                      </div>
-                    </article>
+                      <form id="delete-pet" action="#">
+                          <fieldset>
+                              <input type="text" id="pet-delete-id" placeholder="ID of pet">
+                              <input type="submit" class= "delete-id-pet" value="Delete Pet">
+                          </fieldset>
+                      </form>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <section class="About">
+               <h4><span></span></h4>
+                  <div class ="pet-display-append">
+                    <h4></h4>
                   </div>
+                    <h1>About the site</h1>
+              </section>
+              <article>
+                <div class="photo-vet">
+                    <div class= "quote-vet">
+                    </div>
                 </div>
-              </div>
-            </body>
-          </html>
+              </article>
+          </div>
+      </body>
+  </html>
