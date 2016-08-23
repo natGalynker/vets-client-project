@@ -74,7 +74,7 @@ const onUpdatePet = function onUpdatePet(event) {
 };
 const onRemovePet = function onRemovePet(event) {
   event.preventDefault();
-  let petid =$('pet-delete-id').val();
+  let petid =$('#pet-delete-id').val();
   api.removePet(petid)
   .done(ui.onSuccess)
   .fail(ui.failure);
@@ -91,11 +91,9 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword);
   $('#create-pet').on('submit', onCreatePet);
   $('#pet-id').on('submit', onGetPetsById);
-  $('#remove-pet').on('click', onRemovePet);
+  // $('#remove-pet').on('click', onRemovePet);
   $('#display-pets').on('click', onShowPets);
-
-  $('delete-pet').on('submit', onRemovePet);
-  $("#edit-pet").on('submit', onUpdatePet);
+  $('#edit-pet').on('submit', onUpdatePet);
   $("#pet-delete-id").on('submit',onRemovePet);
 
 };
