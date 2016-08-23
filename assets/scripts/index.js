@@ -21,7 +21,9 @@ const authEvents = require('./auth/events.js');
 
 
 
-
+$(document).on('click', '#display-pets', function(){
+  authEvents.onShowPets();
+});
 
 $(() => {
 authEvents.addHandlers();

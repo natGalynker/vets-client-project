@@ -36,8 +36,8 @@ const signInSuccess = (data) =>{
   $('.register').css("display", "none");
   $('.sign-in').css("display", "none");
   $('#profile').addClass('enable-links');
-  $('#calendar').addClass('enable-links');
-  $('#pets').addClass('enable-links');
+  $('#delete').addClass('enable-links');
+  $('#display-pets').addClass('enable-links');
 
   console.log(app);
   };
@@ -51,19 +51,34 @@ const signInSuccess = (data) =>{
     $('.register').css("display", "initial");
     $('.sign-in').css("display", "initial");
     $('#profile').removeClass('enable-links');
-    $('#calendar').removeClass('enable-links');
-    $('#pets').removeClass('enable-links');
+    $('#delete').removeClass('enable-links');
+    $('#display-pets').removeClass('enable-links');
 
   };
   const createPetSuccess = (data) => {
     app.pet = data.pet;
-    console.log(data.pet);
+    console.log(data.pet.name);
   };
-
-  const showPetsSuccess = (data) =>  {
-    app.pet = data.pet;
-    console.log(data.pet);
-  };
+  //
+  // const showPetsSuccess = (data) =>  {
+    // $(".pet-id-append").append('<h1>'+ data.pet + ' are your pets'+ '</h1>');
+    //   console.log(data);
+    // app.pet = data.pet;
+    // // console.log(data);
+    //
+    const showPetsSuccess = (data) =>  {
+     const displayPets = require('../templates/pets-display.handlebars');
+      console.log(data);
+    $('.pet-display-append').html(displayPets({
+    pets:data.pets
+  }));
+};
+  //
+  // const getPetsByIdSuccess = (data) => {
+  //   app.pet = data.pet;
+  //   console.log(data);
+  //
+  // };
 
 
   //on entering of pets ID launch a popover on submit

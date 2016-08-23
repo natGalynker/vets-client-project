@@ -45,20 +45,34 @@ const createPet = function (data) {
 });
 };
 const getPetsById = function (data){
+  console.log(app.data);
+  console.log(app.pet);
   return $.ajax({
-    url: app.api + '/pets/' + data.id,
+    url: app.api + '/pets/' + app.pet.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data,
+  });
+};
+
+const showPets = function () {
+  return $.ajax({
+    url: app.api + '/pets',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
   });
+
 };
 
-const updatePet = function (data) {
+const updatePet = function (data, id) {
   console.log(data);
   console.log(app.user.token);
   return $.ajax({
-  url: app.api + '/pets/'  + app.pet.id,
+  url: app.api + '/pets/' + id,
   method: 'PATCH',
   headers: {
     Authorization: 'Token token=' + app.user.token,
@@ -67,9 +81,9 @@ const updatePet = function (data) {
 });
 
 };
-const removePet = function (){
+const removePet = function  (petid){
 return $.ajax ({
-  url: app.api + '/pets/' +app.pet.id,
+  url: app.api + '/pets/' + petid,
   method: 'DELETE',
   headers: {
     Authorization: 'Token token=' +app.user.token,
@@ -92,5 +106,6 @@ module.exports = {
   createPet,
   getPetsById,
   updatePet,
-  removePet
+  removePet,
+  showPets
 };

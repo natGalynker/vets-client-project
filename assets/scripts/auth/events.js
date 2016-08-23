@@ -47,17 +47,16 @@ const onCreatePet = function onCreatePet(event) {
   .done(ui.createPetSuccess)
   .fail(ui.failure);
 };
-const onShowPets = function onShowPets(event) {
-let data = getFormFields(this);
+const onShowPets = function onShowPets() {
 event.preventDefault();
-api.showPets(data)
+api.showPets()
 .done(ui.showPetsSuccess)
 .fail(ui.failure);
 };
 
 const onGetPetsById = function onGetPetsById(event) {
   let data = getFormFields(this);
-  console.log(data.id);
+  console.log(data);
   event.preventDefault();
   api.getPetsById(data)
     .done(ui.getPetsByIdSuccess)
@@ -66,16 +65,17 @@ const onGetPetsById = function onGetPetsById(event) {
 
 const onUpdatePet = function onUpdatePet(event) {
   let data = getFormFields(this);
+  let id =$('#edit-pet-id').val();
   console.log(data);
   event.preventDefault();
-  api.updatePet(data)
+  api.updatePet(data, id)
   .done(ui.success)
   .fail(ui.failure);
 };
 const onRemovePet = function onRemovePet(event) {
   event.preventDefault();
-  let petId =$('#delete-pet').val();
-  api.removePet(petId)
+  let petid =$('pet-delete-id').val();
+  api.removePet(petid)
   .done(ui.onSuccess)
   .fail(ui.failure);
 };
@@ -87,17 +87,19 @@ const addHandlers = () => {
   //grab the ID of the iput field to clear the forms
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
-  // $('#sign-in').on('click').val('');
-  // $('#sign-up')
   $('#sign-out').on('click', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#create-pet').on('submit', onCreatePet);
-  $('#display-pets').on('click', onShowPets);
   $('#pet-id').on('submit', onGetPetsById);
-  $('pet-update').on('submit', onUpdatePet);
   $('#remove-pet').on('click', onRemovePet);
+  $('#display-pets').on('click', onShowPets);
+
+  $('delete-pet').on('submit', onRemovePet);
+  $("#edit-pet").on('submit', onUpdatePet);
+  $("#pet-delete-id").on('submit',onRemovePet);
 
 };
 module.exports = {
-  addHandlers
+  addHandlers,
+  onShowPets
 };
