@@ -81,7 +81,8 @@ const updatePet = function (data, id) {
 });
 
 };
-const removePet = function  (petid){
+const removePet = function  (data, petid){
+  console.log(data);
 return $.ajax ({
   url: app.api + '/pets/' + petid,
   method: 'DELETE',

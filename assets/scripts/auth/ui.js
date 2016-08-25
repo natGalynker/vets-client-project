@@ -38,6 +38,7 @@ const signInSuccess = (data) =>{
   $('#profile').addClass('enable-links');
   $('#delete').addClass('enable-links');
   $('#display-pets').addClass('enable-links');
+  $('#edit').addClass('enable-links');
 
   console.log(app);
   };
@@ -53,6 +54,7 @@ const signInSuccess = (data) =>{
     $('#profile').removeClass('enable-links');
     $('#delete').removeClass('enable-links');
     $('#display-pets').removeClass('enable-links');
+    $('#edit').removeClass('enable-links');
 
   };
   const createPetSuccess = (data) => {
