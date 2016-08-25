@@ -23,7 +23,8 @@ input {
 }
 
 .btn.btn-lg.profile,
-.btn.btn-lg.calendar,
+.btn.btn-lg.delete,
+.btn.btn-lg.edit,
 .btn.btn-lg.get-pets {
   @include opacity(.5);
   pointer-events: none;
@@ -31,7 +32,7 @@ input {
 
 
 .pet-display-append {
-  display: inline;
+  display: inherit;
   text-align: center;
 }
 // .modal-backdrop {

@@ -2,11 +2,11 @@
 <h1 class = "pet_list">
 
 {{#each pets}}
-    Pet Name <h2><large>{{this.id}}</large></h2><h2><large>{{this.name}}</large></h2>
-    Owner Name <h2><large>{{this.owner_name}}</large></h2>
-    DOB<h2><large> {{this.born_on}}</large></h2>
-    Gender<h2><large> {{this.gender}}</large></h2>
-    Breed<h2><large> {{this.breed}}</large></h2>
-    Vaccine Date<h2><large> {{this.rabes_date_on}}</large></h2>
-    Only Pet?<h2><large> {{this.only_pet}}</large></h2>
+  <h2><large>{{ID: this.id}}</large></h2><h2><large>{{  Name: this.name}}</large></h2>
+  <h2><large>Owner Name:{{this.owner_name}}</large></h2>
+    <h2><large> DOB{{this.born_on}}</large></h2>
+    <h2><large> Gender{{this.gender}}</large></h2>
+    <h2><large> Breed{{this.breed}}</large></h2>
+    <h2><large> Vaccine Date{{this.rabes_date_on}}</large></h2>
+    <h2><large> Only Pet?{{this.only_pet}}</large></h2>
   {{/each}}
