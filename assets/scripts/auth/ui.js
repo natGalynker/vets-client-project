@@ -21,13 +21,13 @@ const success = (data) => {
 const failure = (error) => {
   console.error(error);
 };
-const onSuccess = function (data) {
-  if (data.pet) {
-    console.log(data.pet);
-  } else {
-    console.table(data.pets);
-  }
-};
+// const onSuccess = function (data) {
+//   if (data.pet) {
+//     console.log(data.pet);
+//   } else {
+//     console.table(data.pets);
+//   }
+// };
 
 //remove sign in and sign up links from drop down
 //make disabled links enable to Profile and calendar
@@ -59,13 +59,6 @@ const signInSuccess = (data) =>{
     app.pet = data.pet;
     console.log(data.pet.name);
   };
-  //
-  // const showPetsSuccess = (data) =>  {
-    // $(".pet-id-append").append('<h1>'+ data.pet + ' are your pets'+ '</h1>');
-    //   console.log(data);
-    // app.pet = data.pet;
-    // // console.log(data);
-    //
     const showPetsSuccess = (data) =>  {
      const displayPets = require('../templates/pets-display.handlebars');
       console.log(data);
@@ -73,24 +66,7 @@ const signInSuccess = (data) =>{
     pets:data.pets
   }));
 };
-  //
-  // const getPetsByIdSuccess = (data) => {
-  //   app.pet = data.pet;
-  //   console.log(data);
-  //
-  // };
 
-
-  //on entering of pets ID launch a popover on submit
-  //create emply popover with no content. the popover body
-  //will be named pet-id-append
-//   const getPetsByIdSuccess = () => {
-//   app.pet = data.pet;
-//   // $(".pet-id-append").append('<h1>'+ data.game.player_x.email + '  was the player'+ '</h1>');
-//   console.log(data);
-//
-//
-// };
 
 module.exports = {
   success,
@@ -99,6 +75,6 @@ module.exports = {
   signOutSuccess,
   createPetSuccess,
   showPetsSuccess,
-  onSuccess
+  // onSuccess
   // getPetsByIdSuccess
 };

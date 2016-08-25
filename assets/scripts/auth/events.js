@@ -73,10 +73,11 @@ const onUpdatePet = function onUpdatePet(event) {
   .fail(ui.failure);
 };
 const onRemovePet = function onRemovePet(event) {
+  // let data =
   event.preventDefault();
-  let petid =$('#pet-delete-id').val();
+  let petid =$('pet-delete-id').val();
   api.removePet(petid)
-  .done(ui.onSuccess)
+  .done(ui.success)
   .fail(ui.failure);
 };
 
@@ -94,7 +95,7 @@ const addHandlers = () => {
   // $('#remove-pet').on('click', onRemovePet);
   $('#display-pets').on('click', onShowPets);
   $('#edit-pet').on('submit', onUpdatePet);
-  $("#pet-delete-id").on('submit',onRemovePet);
+  $('#delete-pet').on('submit',onRemovePet);
 
 };
 module.exports = {
