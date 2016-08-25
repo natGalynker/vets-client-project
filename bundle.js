@@ -107,9 +107,10 @@ webpackJsonp([0],[
 	  api.updatePet(data, id).done(ui.success).fail(ui.failure);
 	};
 	var onRemovePet = function onRemovePet(event) {
+	  // let data =
 	  event.preventDefault();
-	  var petid = $('#pet-delete-id').val();
-	  api.removePet(petid).done(ui.onSuccess).fail(ui.failure);
+	  var petid = $('pet-delete-id').val();
+	  api.removePet(petid).done(ui.success).fail(ui.failure);
 	};
 
 	var addHandlers = function addHandlers() {
@@ -126,7 +127,7 @@ webpackJsonp([0],[
 	  // $('#remove-pet').on('click', onRemovePet);
 	  $('#display-pets').on('click', onShowPets);
 	  $('#edit-pet').on('submit', onUpdatePet);
-	  $("#pet-delete-id").on('submit', onRemovePet);
+	  $('#delete-pet').on('submit', onRemovePet);
 	};
 	module.exports = {
 	  addHandlers: addHandlers,
@@ -354,13 +355,13 @@ webpackJsonp([0],[
 	var failure = function failure(error) {
 	  console.error(error);
 	};
-	var onSuccess = function onSuccess(data) {
-	  if (data.pet) {
-	    console.log(data.pet);
-	  } else {
-	    console.table(data.pets);
-	  }
-	};
+	// const onSuccess = function (data) {
+	//   if (data.pet) {
+	//     console.log(data.pet);
+	//   } else {
+	//     console.table(data.pets);
+	//   }
+	// };
 
 	//remove sign in and sign up links from drop down
 	//make disabled links enable to Profile and calendar
@@ -391,13 +392,6 @@ webpackJsonp([0],[
 	  app.pet = data.pet;
 	  console.log(data.pet.name);
 	};
-	//
-	// const showPetsSuccess = (data) =>  {
-	// $(".pet-id-append").append('<h1>'+ data.pet + ' are your pets'+ '</h1>');
-	//   console.log(data);
-	// app.pet = data.pet;
-	// // console.log(data);
-	//
 	var showPetsSuccess = function showPetsSuccess(data) {
 	  var displayPets = __webpack_require__(8);
 	  console.log(data);
@@ -405,24 +399,6 @@ webpackJsonp([0],[
 	    pets: data.pets
 	  }));
 	};
-	//
-	// const getPetsByIdSuccess = (data) => {
-	//   app.pet = data.pet;
-	//   console.log(data);
-	//
-	// };
-
-
-	//on entering of pets ID launch a popover on submit
-	//create emply popover with no content. the popover body
-	//will be named pet-id-append
-	//   const getPetsByIdSuccess = () => {
-	//   app.pet = data.pet;
-	//   // $(".pet-id-append").append('<h1>'+ data.game.player_x.email + '  was the player'+ '</h1>');
-	//   console.log(data);
-	//
-	//
-	// };
 
 	module.exports = {
 	  success: success,
@@ -430,9 +406,7 @@ webpackJsonp([0],[
 	  signInSuccess: signInSuccess,
 	  signOutSuccess: signOutSuccess,
 	  createPetSuccess: createPetSuccess,
-	  showPetsSuccess: showPetsSuccess,
-	  onSuccess: onSuccess
-	  // getPetsByIdSuccess
+	  showPetsSuccess: showPetsSuccess
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(2)))
 
@@ -445,21 +419,23 @@ webpackJsonp([0],[
 	module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
 	    var alias1=container.lambda, alias2=container.escapeExpression;
 
-	  return "    Pet Name <h2><large> "
+	  return "    Pet Name <h2><large>"
+	    + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
+	    + "</large></h2><h2><large>"
 	    + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
-	    + "</large></h2>\n    Owner Name <h2><large> "
+	    + "</large></h2>\n    Owner Name <h2><large>"
 	    + alias2(alias1((depth0 != null ? depth0.owner_name : depth0), depth0))
-	    + "</large></h2>\n    DOB<h2><small> "
+	    + "</large></h2>\n    DOB<h2><large> "
 	    + alias2(alias1((depth0 != null ? depth0.born_on : depth0), depth0))
-	    + "</small></h2>\n    Gender<h2><small> "
+	    + "</large></h2>\n    Gender<h2><large> "
 	    + alias2(alias1((depth0 != null ? depth0.gender : depth0), depth0))
-	    + "</small></h2>\n    Breed<h2><small> "
+	    + "</large></h2>\n    Breed<h2><large> "
 	    + alias2(alias1((depth0 != null ? depth0.breed : depth0), depth0))
-	    + "</small></h2>\n    Vaccine Date<h2><small> "
+	    + "</large></h2>\n    Vaccine Date<h2><large> "
 	    + alias2(alias1((depth0 != null ? depth0.rabes_date_on : depth0), depth0))
-	    + "</small></h2>\n    Only Pet?<h2><small> "
+	    + "</large></h2>\n    Only Pet?<h2><large> "
 	    + alias2(alias1((depth0 != null ? depth0.only_pet : depth0), depth0))
-	    + "</small></h2>\n";
+	    + "</large></h2>\n";
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 
