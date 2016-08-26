@@ -77,7 +77,7 @@ const onRemovePet = function onRemovePet(event) {
   console.log(data);
   event.preventDefault();
   let petid =$('#pet-delete-id').val();
-  api.removePet(petid)
+  api.removePet(data, petid)
   .done(ui.success)
   .fail(ui.failure);
 };

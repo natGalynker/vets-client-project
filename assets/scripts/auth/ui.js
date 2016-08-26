@@ -12,9 +12,30 @@ jQuery.fn.extend({
       });
   }
 });
+
+$.fn.clearForm = function() {
+  return this.each(function() {
+    let type = this.type, tag = this.tagName.toLowerCase();
+    if (tag === 'form'){
+      return $(':input',this).clearForm();
+    }
+    if (type === 'text' || type === 'password' || tag === 'textarea'){
+      this.value = '';
+    }else if (type === 'checkbox' || type === 'radio'){
+      this.checked = false;
+    } else if (tag === 'select'){
+      this.selectedIndex = -1;
+  }
+});
+};
 const success = (data) => {
+  $('#change-password').clearForm();
+  $('#edit-pet').clearForm();
+  $('#delete-pet').clearForm();
+  $('#sign-up').clearForm();
   if(data){
   console.log(data);
+
 }
 };
 
@@ -39,7 +60,7 @@ const signInSuccess = (data) =>{
   $('#delete').addClass('enable-links');
   $('#display-pets').addClass('enable-links');
   $('#edit').addClass('enable-links');
-
+  $('#sign-in').clearForm();
   console.log(app);
   };
 
@@ -55,10 +76,12 @@ const signInSuccess = (data) =>{
     $('#delete').removeClass('enable-links');
     $('#display-pets').removeClass('enable-links');
     $('#edit').removeClass('enable-links');
+    $('#sign-out').clearForm();
 
   };
   const createPetSuccess = (data) => {
     app.pet = data.pet;
+      $('#create-pet').clearForm();
     console.log(data.pet.name);
   };
     const showPetsSuccess = (data) =>  {
@@ -67,8 +90,11 @@ const signInSuccess = (data) =>{
     $('.pet-display-append').html(displayPets({
     pets:data.pets
   }));
+    const displayHeaders = require('../templates/headers-display.handlebars');
+    $('.headers-display-append').html(displayHeaders({
+      pets:data.pets
+    }));
 };
-
 
 module.exports = {
   success,
@@ -76,7 +102,7 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   createPetSuccess,
-  showPetsSuccess,
+  showPetsSuccess
   // onSuccess
   // getPetsByIdSuccess
 };

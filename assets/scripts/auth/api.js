@@ -81,10 +81,10 @@ const updatePet = function (data, id) {
 });
 
 };
-const removePet = function  (petid){
-  console.log(petid);
+const removePet = function  (data, petid){
+  console.log(data);
 return $.ajax ({
-  url: app.api + '/pets/' + app.pet.id,
+  url: app.api + '/pets/' + petid,
   method: 'DELETE',
   headers: {
     Authorization: 'Token token=' +app.user.token,

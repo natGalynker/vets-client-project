@@ -30,10 +30,15 @@ input {
   pointer-events: none;
 }
 
+.header-display-append {
+display: table-inline;
+text-align: center;
+}
 
 .pet-display-append {
-  display: inherit;
+  display: in;
   text-align: center;
+  list-style: none;
 }
 // .modal-backdrop {
 //   z-index: -1 !important;
