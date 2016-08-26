@@ -1,12 +1,32 @@
 
-<h1 class = "pet_list">
+<table class = "pet values">
+  <tr>
+    <th><h2><large>ID</large></h2></th>
+    <th><h2><large>Name</large></h2></th>
+    <th><h2><large>Owner Name</large></h2></th>
+    <th><h2><large> DOB</large></h2></th>
+    <th><h2><large> Gender</large></h2></th>
+    <th><h2><large> Breed</large></h2></th>
+    <th><h2><large> Vaccine Date</large></h2></th>
+    <th><h2><large> Only Pet?</large></h2></th>
+    <th><h2><large> Declawed?</large></h2></th>
+    <th><h2><large> Neutrered?</large></h2></th>
+    <th><h2><large> Feral?</large></h2></th>
+  </tr>
+    {{#each pets}}
+  <tr>
+    <td><h2><large>  {{ this.id}}</large></h2></td>
+    <td><h2><large>  {{ this.name}}</large></h2></td>
+    <td><h2><large>{{this.owner_name}}</large></h2></td>
+    <td><h2><large>{{this.born_on}}</large></h2></td>
+    <td><h2><large>{{this.gender}}</large></h2></td>
+    <td><h2><large>{{this.breed}}</large></h2></td>
+    <td><h2><large>{{this.rabes_shot_date}}</large></h2></td>
+    <td><h2><large>{{this.only_pet}}</large></h2></td>
+    <td><h2><large> {{this.declawed}}</large></h2></td>
+    <td><h2><large> {{this.neutered}}</large></h2></td>
+    <td><h2><large> {{this.feral}}</large></h2></td>
+  </tr>
+{{/each}}
 
-{{#each pets}}
-    Pet Name <h2><large>{{this.id}}</large></h2><h2><large>{{this.name}}</large></h2>
-    Owner Name <h2><large>{{this.owner_name}}</large></h2>
-    DOB<h2><large> {{this.born_on}}</large></h2>
-    Gender<h2><large> {{this.gender}}</large></h2>
-    Breed<h2><large> {{this.breed}}</large></h2>
-    Vaccine Date<h2><large> {{this.rabes_date_on}}</large></h2>
-    Only Pet?<h2><large> {{this.only_pet}}</large></h2>
-  {{/each}}
+</table>
