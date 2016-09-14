@@ -38,6 +38,14 @@ const success = (data) => {
 
 }
 };
+const patchSuccess = (data) => {
+   $('.pets-container').html('');
+
+   const viewPatch = require('../templates/headers-display.handlebars');
+   $('.pets-container').html(viewPatch({
+     pets: data.pets
+   }));
+ };
 
 const failure = (error) => {
   console.error(error);
@@ -90,10 +98,10 @@ const signInSuccess = (data) =>{
     $('.pet-display-append').html(displayPets({
     pets:data.pets
   }));
-    const displayHeaders = require('../templates/headers-display.handlebars');
-    $('.headers-display-append').html(displayHeaders({
-      pets:data.pets
-    }));
+    // const displayHeaders = require('../templates/headers-display.handlebars');
+    // $('.headers-display-append').html(displayHeaders({
+    //   pets:data.pets
+    // }));
 };
 
 module.exports = {
@@ -102,7 +110,8 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   createPetSuccess,
-  showPetsSuccess
+  showPetsSuccess,
+  patchSuccess,
   // onSuccess
   // getPetsByIdSuccess
 };

@@ -68,6 +68,7 @@ const showPets = function () {
 
 };
 
+
 const updatePet = function (data, id) {
   console.log(data);
   console.log(app.user.token);
@@ -81,16 +82,85 @@ const updatePet = function (data, id) {
 });
 
 };
-const removePet = function  (data, petid){
-  console.log(data);
+const patchPet = function (id, isRabies){
+  return $.ajax ({
+    url: app.api + '/pets/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      "pet": {
+        "rabes_shot": isRabies
+      }
+    }
+  });
+};
+const patchDeclawed = function (id, isDeclawed){
+  return $.ajax ({
+    url: app.api + '/pets/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      "pet": {
+        "declawed": isDeclawed
+      }
+    }
+  });
+};
+
+const patchFeral = function (id, isFeral){
+  return $.ajax ({
+    url: app.api + '/pets/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      "pet": {
+        "feral": isFeral
+      }
+    }
+  });
+};
+
+const patchNeutered = function (id, isNeutered){
+  return $.ajax ({
+    url: app.api + '/pets/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      "pet": {
+        "neutered": isNeutered
+      }
+    }
+  });
+};
+
+// const deleteEntry = function (id){
+//   return $.ajax ({
+//     url: app.api + '/entries/' + id,
+//     method: 'DELETE',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token
+//     },
+//   });
+// };
+
+const removePet = function  (id){
 return $.ajax ({
-  url: app.api + '/pets/' + petid,
+  url: app.api + '/pets/' + id,
   method: 'DELETE',
   headers: {
     Authorization: 'Token token=' +app.user.token,
   },
 });
 };
+
 const signOut = () => $.ajax({
   url: app.api +'/sign-out/' + app.user.id,
   method: 'DELETE',
@@ -108,5 +178,9 @@ module.exports = {
   getPetsById,
   updatePet,
   removePet,
-  showPets
+  showPets,
+  patchPet,
+  patchDeclawed,
+  patchFeral,
+  patchNeutered
 };
