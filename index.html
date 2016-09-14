@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Pet App</title>
   <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
+
 <body>
   <nav class="navbar navbar-static-top navbar-inverse navbar-default">
     <div class="container-fluid">
@@ -19,35 +21,33 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="btn btn-lg profile" data-toggle ="modal" data-target=#profileModal><a href="#" id ="profile">Profile</a></li>
-          <li class="btn btn-lg delete" data-toggle="modal" data-target="#deletePetModal"><a href="#" id ="delete">Remove Pet</a></li>
-          <li class="btn btn-lg edit" data-toggle= "modal" data-target="#editPetModal"><a href="#" id = "edit">Edit Pet</a></li>
-          <li class="btn btn-lg get-pets"><a href="#" id ="display-pets">View Pets</a></li>
+          <li class="btn btn-lg profile" data-toggle="modal" data-target=#profileModal><a href="#" id="profile">Profile</a></li>
+          <li class="btn btn-lg delete" data-toggle="modal" data-target="#deletePetModal"><a href="#" id="delete">Remove Pet</a></li>
+          <li class="btn btn-lg edit" data-toggle="modal" data-target="#editPetModal"><a href="#" id="edit">Edit Pet</a></li>
+          <li class="btn btn-lg get-pets"><a href="#" id="display-pets">View Pets</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-            role="button" aria-haspopup="true" aria-expanded="false">Menu
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li id="register"data-toggle="modal" data-target="#signUpModal"
-              class="nav-button register"><a href="#">sign-up</a></li>
-              <li id="log-in" data-toggle= "modal" data-target="#signInModal"
-              class="sign-in"><a href="#">sign-in</a></li>
-              <li id="change-pw" data-toggle= "modal" data-target="#changePWModal"
-              class="nav-button"><a href="#">change-password</a></li>
-              <li id="sign-out"class="nav-button"><a href="#">sign-out</a></</li>
+              <li id="register" data-toggle="modal" data-target="#signUpModal" class="nav-button register"><a href="#">sign-up</a></li>
+              <li id="log-in" data-toggle="modal" data-target="#signInModal" class="sign-in"><a href="#">sign-in</a></li>
+              <li id="change-pw" data-toggle="modal" data-target="#changePWModal" class="nav-button"><a href="#">change-password</a></li>
+              <li id="sign-out" class="nav-button"><a href="#">sign-out</a></</li>
             </ul>
-          </li>
+            </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
   </nav>
 
   <div class="pet-container">
 
   </div>
-  <div class= "main-container">
+  <div class="main-container">
     <div class="form-container">
       <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -57,87 +57,76 @@
               <h4 class="modal-title" id="SignUpLabel">Sign-Up</h4>
             </div>
             <div class="modal-body">
-              <form id ="sign-up" action="#">
-                <legend>Email<input type="text" class="form-control signUp"
-                  name="credentials[email]" placeholder="email"></legend>
-                <legend>Password<input type="password" class="form-control signUp"
-                  name="credentials[password]" placeholder="password"></legend>
-                <legend>Confirm<input type="password" class="form-control signUp"
-                  name="credentials[password_confirmation]" placeholder="confirm password"></legend>
-                  <div class="modal-footer">
-                    <input type="button" class="btn btn-default" data-dismiss="modal" value="close">
-                    <input type="submit" id="user-sign-up"class="btn btn-primary" value="Submit">
-                  </div>
-                </form>
-              </div>
+              <form id="sign-up" action="#">
+                <legend>Email<input type="text" class="form-control signUp" name="credentials[email]" placeholder="email"></legend>
+                <legend>Password<input type="password" class="form-control signUp" name="credentials[password]" placeholder="password"></legend>
+                <legend>Confirm<input type="password" class="form-control signUp" name="credentials[password_confirmation]" placeholder="confirm password"></legend>
+                <div class="modal-footer">
+                  <input type="button" class="btn btn-default" data-dismiss="modal" value="close">
+                  <input type="submit" id="user-sign-up" class="btn btn-primary" value="Submit">
+                </div>
+              </form>
             </div>
           </div>
         </div>
-        <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="SignInLabel"><label>Sign-In</label></h4>
-                  </div>
-                <div class="modal-body">
-                  <form id="sign-in" action="#">
-                      <legend>Email<input type="text" class="form-control sign-in"
-                        name="credentials[email]" placeholder="email"></legend>
-                      <legend>Password<input type="password" name="credentials[password]" placeholder="password"></legend>
-                        <div class="modal-footer">
-                          <input type="submit" name="submit" id="user-sign-in" value="submit">
-                          <input type="button" name="cancel" value="cancel" data-dismiss="modal">
-                        </div>
-                  </form>
+      </div>
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="SignInLabel"><label>Sign-In</label></h4>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in" action="#">
+                <legend>Email<input type="text" class="form-control sign-in" name="credentials[email]" placeholder="email"></legend>
+                <legend>Password<input type="password" name="credentials[password]" placeholder="password"></legend>
+                <div class="modal-footer">
+                  <input type="submit" name="submit" id="user-sign-in" value="submit">
+                  <input type="button" name="cancel" value="cancel" data-dismiss="modal">
                 </div>
-              </div>
+              </form>
             </div>
           </div>
-          <div class="modal fade" id="changePWModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="changePWLabel"><label>Change-Password</label></h4>
+        </div>
+      </div>
+      <div class="modal fade" id="changePWModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="changePWLabel"><label>Change-Password</label></h4>
+            </div>
+            <div class="modal-body">
+              <form id="change-password" action="#">
+                <legend>Password</legend><input type="password" class="form-control change-pw" name="passwords[old]" placeholder="old password">
+                <legend>New Password<input type="password" class="form-control change-pw" name="passwords[new]" placeholder="new password"></legend>
+                <div class="modal-footer">
+                  <input id="user-change-password" type="submit" name="submit" value="submit">
+                  <input type="button" name="cancel" value="cancel" data-dismiss="modal">
                 </div>
-                <div class="modal-body">
-                    <form id="change-password" action="#">
-                        <legend>Password</legend><input type="password" class="form-control change-pw"
-                          name="passwords[old]" placeholder="old password">
-                        <legend>New Password<input type="password" class="form-control change-pw"
-                          name="passwords[new]" placeholder="new password"></legend>
-                          <div class="modal-footer">
-                            <input id="user-change-password" type="submit" name="submit" value="submit">
-                            <input type="button" name="cancel" value="cancel" data-dismiss="modal">
-                          </div>
-                    </form>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
-          <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="profileModalLabel"><label>Add Pet</label></h4>
-                  </div>
-                  <div class="modal-body">
-                    <form id="create-pet">
-                      <div class="first">
-                        <legend>Owner Name<input type="text" class="form-control pet-profile"
-                            name="pet[owner_name]" placeholder="Name of Owner"></legend>
-                        <legend>Pet Name<input type="text" class="form-control pet-profile"
-                            name="pet[name]" placeholder="pet name"></legend>
-                        <legend>Breed<input type="text" name="pet[breed]"
-                            placeholder="animal breed"></legend>
-                        <legend>Pet Born On <input type="date" class="form-control pet-profile"
-                            name="pet[born_on]" placeholder="date of birth"></legend>
-                        <legend>Sex of Animal<input type="text" class="form-control pet-profile"
-                            name="pet[gender]" placeholder="Male of Female"></legend>
-                      </div>
-                      <!-- <div class="second">
+        </div>
+      </div>
+      <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="profileModalLabel"><label>Add Pet</label></h4>
+            </div>
+            <div class="modal-body">
+              <form id="create-pet">
+                <div class="first">
+                  <legend>Owner Name<input type="text" class="form-control pet-profile" name="pet[owner_name]" placeholder="Name of Owner"></legend>
+                  <legend>Pet Name<input type="text" class="form-control pet-profile" name="pet[name]" placeholder="pet name"></legend>
+                  <legend>Breed<input type="text" name="pet[breed]" placeholder="animal breed"></legend>
+                  <legend>Pet Born On <input type="date" class="form-control pet-profile" name="pet[born_on]" placeholder="date of birth"></legend>
+                  <legend>Sex of Animal<input type="text" class="form-control pet-profile" name="pet[gender]" placeholder="Male of Female"></legend>
+                </div>
+                <!-- <div class="second">
                         <legend >Medical Pet Info</legend>
                           <div class="btn-group" data-toggle="buttons-radio">
                             <fieldset>
@@ -203,16 +192,16 @@
                               </fieldset>
                           </div>
                       </div> -->
-                      <div class="modal-footer">
-                          <input id="create-new-pet" type="submit" name="submit" value="submit">
-                          <input id="refresh-new-pet"type="button" class="btn btn-default" value="close" data-dismiss="modal">
-                      </div>
-                  </form>
+                <div class="modal-footer">
+                  <input id="create-new-pet" type="submit" name="submit" value="submit">
+                  <input id="refresh-new-pet" type="button" class="btn btn-default" value="close" data-dismiss="modal">
                 </div>
-              </div>
+              </form>
             </div>
           </div>
-          <!-- <div class="modal fade" id="editPetModal" tabindex="-1" role="dialog" aria-labelledby="editPeteModalLabel">
+        </div>
+      </div>
+      <!-- <div class="modal fade" id="editPetModal" tabindex="-1" role="dialog" aria-labelledby="editPeteModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -245,42 +234,42 @@
                 </div>
               </div>
             </div> -->
-              <div class="modal fade" id="deletePetModal" tabindex="-1" role="dialog" aria-labelledby="deletePetModalLabel">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="deletePetModalLabel">Remove Pet</h4>
-                    </div>
-                    <div class="modal-body">
+      <div class="modal fade" id="deletePetModal" tabindex="-1" role="dialog" aria-labelledby="deletePetModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="deletePetModalLabel">Remove Pet</h4>
+            </div>
+            <!-- <div class="modal-body">
                       <form id="delete-pet" action="#">
                           <fieldset>
                               <input type="text" id="pet-delete-id" placeholder="ID of pet">
                               <input type="submit" class= "delete-id-pet" value="Delete Pet">
                           </fieldset>
                       </form>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-             <section class="About">
-               <h4><span></span></h4>
-               <div class= "headers-display-append">
-                 <h4></h4>
-               </div>
-                  <div class ="pet-display-append">
-                    <h4></h4>
-                  </div>
-              </div>
-                    <h1>About the site</h1>
-              </section>
-              <article>
-                <div class="photo-vet">
-                    <div class= "quote-vet">
-                    </div>
-                </div>
-              </article>
+                     </div> -->
           </div>
-      </body>
-  </html>
+        </div>
+      </div>
+    </div>
+    <section class="About">
+      <h4><span></span></h4>
+      <div class="headers-display-append">
+        <h4></h4>
+      </div>
+      <div class="pet-display-append">
+        <h4></h4>
+      </div>
+    </section>
+  </div>
+  <h1>About the site</h1>
+  <article>
+    <div class="photo-vet">
+      <div class="quote-vet">
+      </div>
+    </div>
+  </article>
+</body>
+
+</html>

@@ -141,10 +141,19 @@ const patchNeutered = function (id, isNeutered){
   });
 };
 
-const removePet = function  (data, petid){
-  console.log(data);
+// const deleteEntry = function (id){
+//   return $.ajax ({
+//     url: app.api + '/entries/' + id,
+//     method: 'DELETE',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token
+//     },
+//   });
+// };
+
+const removePet = function  (id){
 return $.ajax ({
-  url: app.api + '/pets/' + petid,
+  url: app.api + '/pets/' + id,
   method: 'DELETE',
   headers: {
     Authorization: 'Token token=' +app.user.token,

@@ -34,6 +34,12 @@ $(document).on('submit','.update-neutered-form', function(event){
   authEvents.onPatchNeutered(id);
 });
 
+$(document).on('submit','.delete-pet-form', function(event){
+  event.preventDefault();
+  let id = $(this).data('id');
+  authEvents.onRemovePet(id);
+});
+
 
 $(() => {
 authEvents.addHandlers();

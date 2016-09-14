@@ -91,15 +91,13 @@ const onPatchNeutered = function onPatchDeclawed(id) {
     .fail(ui.failure);
 };
 
-const onRemovePet = function onRemovePet(event) {
-  let data = getFormFields(this);
-  console.log(data);
+const onRemovePet = function onRemovePet(id) {
   event.preventDefault();
-  let petid =$('#pet-delete-id').val();
-  api.removePet(data, petid)
+  api.removePet(id)
   .done(ui.success)
   .fail(ui.failure);
 };
+
 
 const addHandlers = () => {
   console.log('working');
