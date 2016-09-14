@@ -10,18 +10,28 @@ $(document).on('click', '#display-pets', function(){
   authEvents.onShowPets();
 });
 
-// $(document).on('submit', '.show-patch-form', function(){
-//   authEvents.onPatchPet();
-// });
 $(document).on('submit','.update-vaccine-form', function(event){
   event.preventDefault();
   let id = $(this).data('id');
   authEvents.onPatchPet(id);
 });
+
 $(document).on('submit','.update-declawed-form', function(event){
   event.preventDefault();
   let id = $(this).data('id');
   authEvents.onPatchDeclawed(id);
+});
+
+$(document).on('submit','.update-feral-form', function(event){
+  event.preventDefault();
+  let id = $(this).data('id');
+  authEvents.onPatchFeral(id);
+});
+
+$(document).on('submit','.update-neutered-form', function(event){
+  event.preventDefault();
+  let id = $(this).data('id');
+  authEvents.onPatchNeutered(id);
 });
 
 

@@ -76,15 +76,21 @@ const onPatchDeclawed = function onPatchDeclawed(id) {
     .done(ui.patchSuccess(id))
     .fail(ui.failure);
 };
-// const onUpdatePet = function onUpdatePet(event) {
-//   let data = getFormFields(this);
-//   let id =$('#edit-pet-id').val();
-//   console.log(data);
-//   event.preventDefault();
-//   api.updatePet(data, id)
-//   .done(ui.success)
-//   .fail(ui.failure);
-// };
+
+const onPatchFeral = function onPatchPet(id) {
+  let isFeral = true;
+  api.patchPet(id, isFeral)
+    .done(ui.patchSuccess(id))
+    .fail(ui.failure);
+};
+
+const onPatchNeutered = function onPatchDeclawed(id) {
+  let isNeutered = true;
+  api.patchDeclawed(id, isNeutered)
+    .done(ui.patchSuccess(id))
+    .fail(ui.failure);
+};
+
 const onRemovePet = function onRemovePet(event) {
   let data = getFormFields(this);
   console.log(data);
@@ -118,5 +124,7 @@ module.exports = {
   onPatchPet,
   onRemovePet,
   onGetPetsById,
-  onPatchDeclawed
+  onPatchDeclawed,
+  onPatchFeral,
+  onPatchNeutered
 };

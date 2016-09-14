@@ -110,6 +110,37 @@ const patchDeclawed = function (id, isDeclawed){
     }
   });
 };
+
+const patchFeral = function (id, isFeral){
+  return $.ajax ({
+    url: app.api + '/pets/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      "pet": {
+        "feral": isFeral
+      }
+    }
+  });
+};
+
+const patchNeutered = function (id, isNeutered){
+  return $.ajax ({
+    url: app.api + '/pets/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      "pet": {
+        "neutered": isNeutered
+      }
+    }
+  });
+};
+
 const removePet = function  (data, petid){
   console.log(data);
 return $.ajax ({
@@ -120,6 +151,7 @@ return $.ajax ({
   },
 });
 };
+
 const signOut = () => $.ajax({
   url: app.api +'/sign-out/' + app.user.id,
   method: 'DELETE',
@@ -139,5 +171,7 @@ module.exports = {
   removePet,
   showPets,
   patchPet,
-  patchDeclawed
+  patchDeclawed,
+  patchFeral,
+  patchNeutered
 };
