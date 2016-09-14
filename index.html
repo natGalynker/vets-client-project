@@ -21,8 +21,8 @@
         <ul class="nav navbar-nav">
           <li class="btn btn-lg profile" data-toggle ="modal" data-target=#profileModal><a href="#" id ="profile">Profile</a></li>
           <li class="btn btn-lg delete" data-toggle="modal" data-target="#deletePetModal"><a href="#" id ="delete">Remove Pet</a></li>
+          <li class="btn btn-lg edit" data-toggle= "modal" data-target="#editPetModal"><a href="#" id = "edit">Edit Pet</a></li>
           <li class="btn btn-lg get-pets"><a href="#" id ="display-pets">View Pets</a></li>
-          <li class="btn btn-lg edit" data-toggle= "modal" data-target="#editPetModal"><a href="#" id = "edit">Edit Pets</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
@@ -43,6 +43,10 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+
+  <div class="pet-container">
+
+  </div>
   <div class= "main-container">
     <div class="form-container">
       <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -133,12 +137,8 @@
                         <legend>Sex of Animal<input type="text" class="form-control pet-profile"
                             name="pet[gender]" placeholder="Male of Female"></legend>
                       </div>
-                      <div class="second">
+                      <!-- <div class="second">
                         <legend >Medical Pet Info</legend>
-                          <fieldset>Date of Rabies Vaccine<input class ="form-control pet-profile"
-                            name="pet[rabes_shot_date]" type="date"
-                            placeholder="Date of last rabies vaccinne">
-                          </fieldset>
                           <div class="btn-group" data-toggle="buttons-radio">
                             <fieldset>
                               <h2><span>Only Pet?</span></h2>
@@ -177,7 +177,7 @@
                             </fieldset>
                         </div>
                       </div>
-                      <div class="first">
+                      <div class="fifth">
                           <div class="btn-group" data-toggle="buttons-radio">
                               <fieldset>
                                   <h2><span>Feral?</span></h2>
@@ -190,6 +190,19 @@
                               </fieldset>
                           </div>
                       </div>
+                      <div class="sixth">
+                          <div class="btn-group" data-toggle="buttons-radio">
+                              <fieldset>
+                                  <h2><span>Rabies Shot?</span></h2>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="pet[rabes_shot]" class="btn btn-info">Yes
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="pet[rabes_shot]" class="btn btn-primary">No
+                                    </label>
+                              </fieldset>
+                          </div>
+                      </div> -->
                       <div class="modal-footer">
                           <input id="create-new-pet" type="submit" name="submit" value="submit">
                           <input id="refresh-new-pet"type="button" class="btn btn-default" value="close" data-dismiss="modal">
@@ -199,7 +212,7 @@
               </div>
             </div>
           </div>
-          <div class="modal fade" id="editPetModal" tabindex="-1" role="dialog" aria-labelledby="editPeteModalLabel">
+          <!-- <div class="modal fade" id="editPetModal" tabindex="-1" role="dialog" aria-labelledby="editPeteModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -207,7 +220,7 @@
                     <h4 class="modal-title" id="editPetModalLabel"><label>Update Pet</label></h4>
                 </div>
                 <div class="modal-body">
-                    <form id="edit-pet" action="#">
+                    <form id="edit-pet" action="#" data-id="{{.id}}">
                         <div class="patch">
                             <input placeholder="Pet-id"id="edit-pet-id" type="text" name="pet[id]">
                             <legend>
@@ -231,7 +244,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
               <div class="modal fade" id="deletePetModal" tabindex="-1" role="dialog" aria-labelledby="deletePetModalLabel">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">

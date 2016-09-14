@@ -68,6 +68,7 @@ const showPets = function () {
 
 };
 
+
 const updatePet = function (data, id) {
   console.log(data);
   console.log(app.user.token);
@@ -80,6 +81,34 @@ const updatePet = function (data, id) {
   data,
 });
 
+};
+const patchPet = function (id, isRabies){
+  return $.ajax ({
+    url: app.api + '/pets/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      "pet": {
+        "rabes_shot": isRabies
+      }
+    }
+  });
+};
+const patchDeclawed = function (id, isDeclawed){
+  return $.ajax ({
+    url: app.api + '/pets/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      "pet": {
+        "declawed": isDeclawed
+      }
+    }
+  });
 };
 const removePet = function  (data, petid){
   console.log(data);
@@ -108,5 +137,7 @@ module.exports = {
   getPetsById,
   updatePet,
   removePet,
-  showPets
+  showPets,
+  patchPet,
+  patchDeclawed
 };

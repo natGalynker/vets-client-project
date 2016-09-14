@@ -1,32 +1,31 @@
+  {{#each pets}}
+<div class = "pet values">
+    <h2><large>Name{{this.name}}</large></h2>
+    <h2><large>Owner Name{{this.owner_name}}</large></h2>
+    <h2><large> DOB{{this.born_on}}</large></h2>
+    <h2><large> Gender{{this.gender}}</large></h2>
+    <h2><large> Breed{{this.breed}}</large></h2>
+  <form class="update-vaccine-form" data-id="{{id}}">
+    <input name="submit" type="submit" class="update-vaccinne-btn" value="Got a shot!">
+  </form>
+    <!-- <form class="update-feral-form" data-id="{{id}}">
+    <input name="pet[feral]" type="submit" class="update-feral-btn" value="Not Feral!">
+  </form>
+    <form class="update-neutered-form" data-id="{{id}}">
+    <input name="pet[neutered]" type="submit" class="update-neutered-btn" value="Neutered!!">
+  </form> -->
+  <br></br>
+    <form class="update-declawed-form" data-id="{{id}}">
+    <input name="pet[declawed]" type="submit" class="update-declawed-btn" value="Declawed!!!">
+  </form>
+  <form class="delete-pet-form" data-id="{{id}}">
+    <input name="submit" type="submit" class="delete-pet-btn" value="Remove Pet">
+  </form>
 
-<table class = "pet values">
-  <tr>
-    <th><h2><large>ID</large></h2></th>
-    <th><h2><large>Name</large></h2></th>
-    <th><h2><large>Owner Name</large></h2></th>
-    <th><h2><large> DOB</large></h2></th>
-    <th><h2><large> Gender</large></h2></th>
-    <th><h2><large> Breed</large></h2></th>
-    <th><h2><large> Vaccine Date</large></h2></th>
-    <th><h2><large> Only Pet?</large></h2></th>
-    <th><h2><large> Declawed?</large></h2></th>
-    <th><h2><large> Neutrered?</large></h2></th>
-    <th><h2><large> Feral?</large></h2></th>
-  </tr>
-    {{#each pets}}
-  <tr>
-    <td><h2><large>  {{ this.id}}</large></h2></td>
-    <td><h2><large>  {{ this.name}}</large></h2></td>
-    <td><h2><large>{{this.owner_name}}</large></h2></td>
-    <td><h2><large>{{this.born_on}}</large></h2></td>
-    <td><h2><large>{{this.gender}}</large></h2></td>
-    <td><h2><large>{{this.breed}}</large></h2></td>
-    <td><h2><large>{{this.rabes_shot_date}}</large></h2></td>
-    <td><h2><large>{{this.only_pet}}</large></h2></td>
-    <td><h2><large> {{this.declawed}}</large></h2></td>
-    <td><h2><large> {{this.neutered}}</large></h2></td>
-    <td><h2><large> {{this.feral}}</large></h2></td>
-  </tr>
 {{/each}}
 
-</table>
+<div class = "patch-pets">
+
+
+
+<!-- attach data-id which would  -->

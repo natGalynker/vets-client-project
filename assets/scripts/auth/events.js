@@ -63,15 +63,28 @@ const onGetPetsById = function onGetPetsById(event) {
     .fail(ui.failure);
 };
 
-const onUpdatePet = function onUpdatePet(event) {
-  let data = getFormFields(this);
-  let id =$('#edit-pet-id').val();
-  console.log(data);
-  event.preventDefault();
-  api.updatePet(data, id)
-  .done(ui.success)
-  .fail(ui.failure);
+const onPatchPet = function onPatchPet(id) {
+  let isChanged = true;
+  api.patchPet(id, isChanged)
+    .done(ui.patchSuccess(id))
+    .fail(ui.failure);
 };
+
+const onPatchDeclawed = function onPatchDeclawed(id) {
+  let isDeclawed = true;
+  api.patchDeclawed(id, isDeclawed)
+    .done(ui.patchSuccess(id))
+    .fail(ui.failure);
+};
+// const onUpdatePet = function onUpdatePet(event) {
+//   let data = getFormFields(this);
+//   let id =$('#edit-pet-id').val();
+//   console.log(data);
+//   event.preventDefault();
+//   api.updatePet(data, id)
+//   .done(ui.success)
+//   .fail(ui.failure);
+// };
 const onRemovePet = function onRemovePet(event) {
   let data = getFormFields(this);
   console.log(data);
@@ -92,14 +105,18 @@ const addHandlers = () => {
   $('#sign-out').on('click', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#create-pet').on('submit', onCreatePet);
-  $('#pet-id').on('submit', onGetPetsById);
+  // $('#pet-id').on('submit', onGetPetsById);
   // $('#remove-pet').on('click', onRemovePet);
-  $('#display-pets').on('click', onShowPets);
-  $('#edit-pet').on('submit', onUpdatePet);
-  $('#delete-pet').on('submit', onRemovePet);
+  // $('#display-pets').on('click', onShowPets);
+  // $('#edit-pet').on('submit', onUpdatePet);
+  // $('#delete-pet').on('submit', onRemovePet);
 
 };
 module.exports = {
   addHandlers,
-  onShowPets
+  onShowPets,
+  onPatchPet,
+  onRemovePet,
+  onGetPetsById,
+  onPatchDeclawed
 };
