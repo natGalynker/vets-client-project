@@ -7,15 +7,16 @@ const  api= require('./api');
 const ui = require('./ui');
 
 
+//sign up
 const onSignUp = function (event) {
   let data = getFormFields(this);
-  console.log(" test");
   event.preventDefault();
   api.signUp(data)
   .done(ui.success)
   .fail(ui.failure);
 };
 
+//sign in
 const onSignIn = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
@@ -26,13 +27,13 @@ const onSignIn = function (event) {
 
 const onChangePassword = function onChangePassword(event) {
   let data = getFormFields(this);
-  console.log(data);
   event.preventDefault();
   api.changePassword(data)
   .done(ui.success)
   .fail(ui.failure);
 };
 
+//sign out function
 const onSignOut = function onSignOut(event) {
   event.preventDefault();
   api.signOut()
@@ -40,6 +41,7 @@ const onSignOut = function onSignOut(event) {
   .fail(ui.failure);
 };
 
+// create a new pet and save it to the database
 const onCreatePet = function onCreatePet(event) {
   let data = getFormFields(this);
   event.preventDefault();
@@ -47,6 +49,8 @@ const onCreatePet = function onCreatePet(event) {
   .done(ui.createPetSuccess)
   .fail(ui.failure);
 };
+
+//show all the pets
 const onShowPets = function onShowPets() {
 event.preventDefault();
 api.showPets()
@@ -56,20 +60,21 @@ api.showPets()
 
 const onGetPetsById = function onGetPetsById(event) {
   let data = getFormFields(this);
-  console.log(data);
   event.preventDefault();
   api.getPetsById(data)
     .done(ui.getPetsByIdSuccess)
     .fail(ui.failure);
 };
 
-const onPatchPet = function onPatchPet(id) {
-  let isChanged = true;
-  api.patchPet(id, isChanged)
-    .done(ui.patchSuccess(id))
-    .fail(ui.failure);
-};
+//grab the id of the pet from the database and update the pets owner or name
+// const onPatchPet = function onPatchPet(id) {
+//   let isChanged = true;
+//   api.patchPet(id, isChanged)
+//     .done(ui.patchSuccess(id))
+//     .fail(ui.failure);
+// };
 
+//grab the id of the pet from the database and change declawed to true
 const onPatchDeclawed = function onPatchDeclawed(id) {
   let isDeclawed = true;
   api.patchDeclawed(id, isDeclawed)
@@ -77,13 +82,21 @@ const onPatchDeclawed = function onPatchDeclawed(id) {
     .fail(ui.failure);
 };
 
-const onPatchFeral = function onPatchPet(id) {
+const onPatchPet = function onPatchPet(id) {
+  let isRabies = true;
+  api.patchPet(id, isRabies)
+    .done(ui.patchSuccess(id))
+    .fail(ui.failure);
+};
+//grab the id of the pet from the database and change feral to true
+const onPatchFeral = function onPatchFeral(id) {
   let isFeral = true;
-  api.patchPet(id, isFeral)
+  api.patchFeral(id, isFeral)
     .done(ui.patchSuccess(id))
     .fail(ui.failure);
 };
 
+//grab the id of the pet from the database and change neutered to true
 const onPatchNeutered = function onPatchDeclawed(id) {
   let isNeutered = true;
   api.patchDeclawed(id, isNeutered)
@@ -91,6 +104,7 @@ const onPatchNeutered = function onPatchDeclawed(id) {
     .fail(ui.failure);
 };
 
+//grab the id of the pet from the database and delete that pet
 const onRemovePet = function onRemovePet(id) {
   event.preventDefault();
   api.removePet(id)
@@ -100,29 +114,22 @@ const onRemovePet = function onRemovePet(id) {
 
 
 const addHandlers = () => {
-  console.log('working');
-  //grab the ID of the form for getFormFields function actions
-  //grab the ID of the Buttons for DELETE request actions
-  //grab the ID of the iput field to clear the forms
+//use jquery to target the forms for user actions
+//use jquery to target the form for creating a pet
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('click', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#create-pet').on('submit', onCreatePet);
-  // $('#pet-id').on('submit', onGetPetsById);
-  // $('#remove-pet').on('click', onRemovePet);
-  // $('#display-pets').on('click', onShowPets);
-  // $('#edit-pet').on('submit', onUpdatePet);
-  // $('#delete-pet').on('submit', onRemovePet);
 
 };
 module.exports = {
   addHandlers,
   onShowPets,
-  onPatchPet,
   onRemovePet,
   onGetPetsById,
   onPatchDeclawed,
+  onPatchPet,
   onPatchFeral,
   onPatchNeutered
 };
