@@ -21,9 +21,9 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="btn btn-lg profile" data-toggle="modal" data-target=#profileModal><a href="#" id="profile">Profile</a></li>
-          <li class="btn btn-lg delete" data-toggle="modal" data-target="#deletePetModal"><a href="#" id="delete">Remove Pet</a></li>
-          <li class="btn btn-lg edit" data-toggle="modal" data-target="#editPetModal"><a href="#" id="edit">Edit Pet</a></li>
+          <li class="btn btn-lg pet" data-toggle="modal" data-target=#petModal><a href="#" id="pet">Create Pet</a></li>
+          <!-- <li class="btn btn-lg delete" data-toggle="modal" data-target="#deletePetModal"><a href="#" id="delete">Remove Pet</a></li>
+          <li class="btn btn-lg edit" data-toggle="modal" data-target="#editPetModal"><a href="#" id="edit">Edit Pet</a></li> -->
           <li class="btn btn-lg get-pets"><a href="#" id="display-pets">View Pets</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -89,7 +89,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div><!--End Sign in Modal -->
       <div class="modal fade" id="changePWModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -109,13 +109,13 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
+      </div><!--End Change Password Modal -->
+      <div class="modal fade" id="petModal" tabindex="-1" role="dialog" aria-labelledby="petsModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="profileModalLabel"><label>Add Pet</label></h4>
+              <h4 class="modal-title" id="petModalLabel"><label>Add Pet</label></h4>
             </div>
             <div class="modal-body">
               <form id="create-pet">
@@ -125,7 +125,7 @@
                   <legend>Breed<input type="text" name="pet[breed]" placeholder="animal breed"></legend>
                   <legend>Pet Born On <input type="date" class="form-control pet-profile" name="pet[born_on]" placeholder="date of birth"></legend>
                   <legend>Sex of Animal<input type="text" class="form-control pet-profile" name="pet[gender]" placeholder="Male of Female"></legend>
-                </div>
+                </div><!--End Create Pet/Profile Modal Modal -->
                 <!-- <div class="second">
                         <legend >Medical Pet Info</legend>
                           <div class="btn-group" data-toggle="buttons-radio">
@@ -241,7 +241,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 class="modal-title" id="deletePetModalLabel">Remove Pet</h4>
             </div>
-        <!-- <div class="modal-body">
+            <!-- <div class="modal-body">
               <form id="delete-pet" action="#">
                   <fieldset>
                       <input type="text" id="pet-delete-id" placeholder="ID of pet">

@@ -2,62 +2,64 @@
 
 const app = require('../app.js');
 
-const signUp =  function(data) {
-console.log(data);
-return $.ajax({ //same as return $.ajax({
+
+//allows user to POST their email and password to the database
+const signUp = function(data) {
+  return $.ajax({ //same as return $.ajax({
     url: app.api + '/sign-up',
     method: 'POST',
     data,
-});
+  });
 };
 
-const signIn = function (data) {
-  console.log(data);
+//post action to sign a user in
+const signIn = function(data) {
   return $.ajax({
     url: app.api + '/sign-in',
     method: 'POST',
     data,
-});
-};
-const changePassword = function (data) {
-  console.log(data);
-  console.log(app.user.token);
-  return $.ajax({
-  url: app.api + '/change-password/'  + app.user.id,
-  method: 'PATCH',
-  headers: {
-    Authorization: 'Token token=' + app.user.token,
-  },
-    data,
-});
+  });
 };
 
-const createPet = function (data) {
-  console.log(data);
-  console.log(app.user.token);
+// allows the user to change their
+const changePassword = function(data) {
   return $.ajax({
-  url: app.api + '/pets',
-  method: 'POST',
-  headers: {
-    Authorization: 'Token token=' + app.user.token,
-  },
-    data,
-});
-};
-const getPetsById = function (data){
-  console.log(app.data);
-  console.log(app.pet);
-  return $.ajax({
-    url: app.api + '/pets/' + app.pet.id,
-    method: 'GET',
+    url: app.api + '/change-password/' + app.user.id,
+    method: 'PATCH',
     headers: {
-      Authorization: 'Token token=' + app.user.token
+      Authorization: 'Token token=' + app.user.token,
     },
     data,
   });
 };
 
-const showPets = function () {
+//allows the user to create a pet
+const createPet = function(data) {
+  return $.ajax({
+    url: app.api + '/pets',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data,
+  });
+};
+
+
+// const getPetsById = function(data) {
+//   return $.ajax({
+//     url: app.api + '/pets/' + app.pet.id,
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token
+//     },
+//     data,
+//   });
+// };
+
+
+//displays all the pets
+const showPets = function() {
   return $.ajax({
     url: app.api + '/pets',
     method: 'GET',
@@ -69,21 +71,21 @@ const showPets = function () {
 };
 
 
-const updatePet = function (data, id) {
-  console.log(data);
-  console.log(app.user.token);
-  return $.ajax({
-  url: app.api + '/pets/' + id,
-  method: 'PATCH',
-  headers: {
-    Authorization: 'Token token=' + app.user.token,
-  },
-  data,
-});
+// const updatePet = function(data, id) {
+//   return $.ajax({
+//     url: app.api + '/pets/' + id,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     },
+//     data,
+//   });
+//
+// };
 
-};
-const patchPet = function (id, isRabies){
-  return $.ajax ({
+//updates the pet to having the rabies shot
+const patchPet = function(id, isRabies) {
+  return $.ajax({
     url: app.api + '/pets/' + id,
     method: 'PATCH',
     headers: {
@@ -96,8 +98,10 @@ const patchPet = function (id, isRabies){
     }
   });
 };
-const patchDeclawed = function (id, isDeclawed){
-  return $.ajax ({
+
+//update the pet to being declawed
+const patchDeclawed = function(id, isDeclawed) {
+  return $.ajax({
     url: app.api + '/pets/' + id,
     method: 'PATCH',
     headers: {
@@ -111,8 +115,9 @@ const patchDeclawed = function (id, isDeclawed){
   });
 };
 
-const patchFeral = function (id, isFeral){
-  return $.ajax ({
+//update the pet to being feral
+const patchFeral = function(id, isFeral) {
+  return $.ajax({
     url: app.api + '/pets/' + id,
     method: 'PATCH',
     headers: {
@@ -126,8 +131,9 @@ const patchFeral = function (id, isFeral){
   });
 };
 
-const patchNeutered = function (id, isNeutered){
-  return $.ajax ({
+//update the pet to being neutered
+const patchNeutered = function(id, isNeutered) {
+  return $.ajax({
     url: app.api + '/pets/' + id,
     method: 'PATCH',
     headers: {
@@ -141,42 +147,34 @@ const patchNeutered = function (id, isNeutered){
   });
 };
 
-// const deleteEntry = function (id){
-//   return $.ajax ({
-//     url: app.api + '/entries/' + id,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token
-//     },
-//   });
-// };
-
-const removePet = function  (id){
-return $.ajax ({
-  url: app.api + '/pets/' + id,
-  method: 'DELETE',
-  headers: {
-    Authorization: 'Token token=' +app.user.token,
-  },
-});
+//removes the pet from the database
+const removePet = function(id) {
+  return $.ajax({
+    url: app.api + '/pets/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
 };
 
+//logs the user out of the database
 const signOut = () => $.ajax({
-  url: app.api +'/sign-out/' + app.user.id,
+  url: app.api + '/sign-out/' + app.user.id,
   method: 'DELETE',
   headers: {
     Authorization: 'Token token=' + app.user.token,
   },
 });
 
+
+//sends the ajax functions to grab in
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   createPet,
-  getPetsById,
-  updatePet,
   removePet,
   showPets,
   patchPet,
