@@ -35,35 +35,40 @@ webpackJsonp([0],[
 
 	// use require without a reference to ensure a file is bundled
 
-
+	//on the click load the handlebars which will show pets
 	$(document).on('click', '#display-pets', function () {
 	  authEvents.onShowPets();
 	});
 
+	//on submit submit the Patch action that changes vaccine to true
 	$(document).on('submit', '.update-vaccine-form', function (event) {
 	  event.preventDefault();
 	  var id = $(this).data('id');
 	  authEvents.onPatchPet(id);
 	});
 
+	//on submit submit the Patch action that changes declawed to true
 	$(document).on('submit', '.update-declawed-form', function (event) {
 	  event.preventDefault();
 	  var id = $(this).data('id');
 	  authEvents.onPatchDeclawed(id);
 	});
 
+	//on submit submit the Patch action that changes feral to true
 	$(document).on('submit', '.update-feral-form', function (event) {
 	  event.preventDefault();
 	  var id = $(this).data('id');
 	  authEvents.onPatchFeral(id);
 	});
 
+	//on submit submit the Patch action that neutered vaccine to true
 	$(document).on('submit', '.update-neutered-form', function (event) {
 	  event.preventDefault();
 	  var id = $(this).data('id');
 	  authEvents.onPatchNeutered(id);
 	});
 
+	//on submit submit the DELETE action that removes the pet
 	$(document).on('submit', '.delete-pet-form', function (event) {
 	  event.preventDefault();
 	  var id = $(this).data('id');
@@ -87,13 +92,14 @@ webpackJsonp([0],[
 	var api = __webpack_require__(5);
 	var ui = __webpack_require__(7);
 
+	//sign up
 	var onSignUp = function onSignUp(event) {
 	  var data = getFormFields(this);
-	  console.log(" test");
 	  event.preventDefault();
 	  api.signUp(data).done(ui.success).fail(ui.failure);
 	};
 
+	//sign in
 	var onSignIn = function onSignIn(event) {
 	  var data = getFormFields(this);
 	  event.preventDefault();
@@ -102,21 +108,24 @@ webpackJsonp([0],[
 
 	var onChangePassword = function onChangePassword(event) {
 	  var data = getFormFields(this);
-	  console.log(data);
 	  event.preventDefault();
 	  api.changePassword(data).done(ui.success).fail(ui.failure);
 	};
 
+	//sign out function
 	var onSignOut = function onSignOut(event) {
 	  event.preventDefault();
 	  api.signOut().done(ui.signOutSuccess).fail(ui.failure);
 	};
 
+	// create a new pet and save it to the database
 	var onCreatePet = function onCreatePet(event) {
 	  var data = getFormFields(this);
 	  event.preventDefault();
 	  api.createPet(data).done(ui.createPetSuccess).fail(ui.failure);
 	};
+
+	//show all the pets
 	var onShowPets = function onShowPets() {
 	  event.preventDefault();
 	  api.showPets().done(ui.showPetsSuccess).fail(ui.failure);
@@ -124,59 +133,62 @@ webpackJsonp([0],[
 
 	var onGetPetsById = function onGetPetsById(event) {
 	  var data = getFormFields(this);
-	  console.log(data);
 	  event.preventDefault();
 	  api.getPetsById(data).done(ui.getPetsByIdSuccess).fail(ui.failure);
 	};
 
-	var onPatchPet = function onPatchPet(id) {
-	  var isChanged = true;
-	  api.patchPet(id, isChanged).done(ui.patchSuccess(id)).fail(ui.failure);
-	};
+	//grab the id of the pet from the database and update the pets owner or name
+	// const onPatchPet = function onPatchPet(id) {
+	//   let isChanged = true;
+	//   api.patchPet(id, isChanged)
+	//     .done(ui.patchSuccess(id))
+	//     .fail(ui.failure);
+	// };
 
+	//grab the id of the pet from the database and change declawed to true
 	var onPatchDeclawed = function onPatchDeclawed(id) {
 	  var isDeclawed = true;
 	  api.patchDeclawed(id, isDeclawed).done(ui.patchSuccess(id)).fail(ui.failure);
 	};
 
-	var onPatchFeral = function onPatchPet(id) {
+	var onPatchPet = function onPatchPet(id) {
+	  var isRabies = true;
+	  api.patchPet(id, isRabies).done(ui.patchSuccess(id)).fail(ui.failure);
+	};
+	//grab the id of the pet from the database and change feral to true
+	var onPatchFeral = function onPatchFeral(id) {
 	  var isFeral = true;
-	  api.patchPet(id, isFeral).done(ui.patchSuccess(id)).fail(ui.failure);
+	  api.patchFeral(id, isFeral).done(ui.patchSuccess(id)).fail(ui.failure);
 	};
 
+	//grab the id of the pet from the database and change neutered to true
 	var onPatchNeutered = function onPatchDeclawed(id) {
 	  var isNeutered = true;
 	  api.patchDeclawed(id, isNeutered).done(ui.patchSuccess(id)).fail(ui.failure);
 	};
 
+	//grab the id of the pet from the database and delete that pet
 	var onRemovePet = function onRemovePet(id) {
 	  event.preventDefault();
 	  api.removePet(id).done(ui.success).fail(ui.failure);
 	};
 
 	var addHandlers = function addHandlers() {
-	  console.log('working');
-	  //grab the ID of the form for getFormFields function actions
-	  //grab the ID of the Buttons for DELETE request actions
-	  //grab the ID of the iput field to clear the forms
+	  //use jquery to target the forms for user actions
+	  //use jquery to target the form for creating a pet
 	  $('#sign-up').on('submit', onSignUp);
 	  $('#sign-in').on('submit', onSignIn);
 	  $('#sign-out').on('click', onSignOut);
 	  $('#change-password').on('submit', onChangePassword);
 	  $('#create-pet').on('submit', onCreatePet);
-	  // $('#pet-id').on('submit', onGetPetsById);
-	  // $('#remove-pet').on('click', onRemovePet);
-	  // $('#display-pets').on('click', onShowPets);
-	  // $('#edit-pet').on('submit', onUpdatePet);
-	  // $('#delete-pet').on('submit', onRemovePet);
 	};
 	module.exports = {
 	  addHandlers: addHandlers,
 	  onShowPets: onShowPets,
-	  onPatchPet: onPatchPet,
 	  onRemovePet: onRemovePet,
 	  onGetPetsById: onGetPetsById,
 	  onPatchDeclawed: onPatchDeclawed,
+	  onPatchPet: onPatchPet,
 	  onPatchFeral: onPatchFeral,
 	  onPatchNeutered: onPatchNeutered
 	};
@@ -255,8 +267,8 @@ webpackJsonp([0],[
 
 	var app = __webpack_require__(6);
 
+	//allows user to POST their email and password to the database
 	var signUp = function signUp(data) {
-	  console.log(data);
 	  return $.ajax({ //same as return $.ajax({
 	    url: app.api + '/sign-up',
 	    method: 'POST',
@@ -264,17 +276,17 @@ webpackJsonp([0],[
 	  });
 	};
 
+	//post action to sign a user in
 	var signIn = function signIn(data) {
-	  console.log(data);
 	  return $.ajax({
 	    url: app.api + '/sign-in',
 	    method: 'POST',
 	    data: data
 	  });
 	};
+
+	// allows the user to change their
 	var changePassword = function changePassword(data) {
-	  console.log(data);
-	  console.log(app.user.token);
 	  return $.ajax({
 	    url: app.api + '/change-password/' + app.user.id,
 	    method: 'PATCH',
@@ -285,9 +297,8 @@ webpackJsonp([0],[
 	  });
 	};
 
+	//allows the user to create a pet
 	var createPet = function createPet(data) {
-	  console.log(data);
-	  console.log(app.user.token);
 	  return $.ajax({
 	    url: app.api + '/pets',
 	    method: 'POST',
@@ -297,19 +308,20 @@ webpackJsonp([0],[
 	    data: data
 	  });
 	};
-	var getPetsById = function getPetsById(data) {
-	  console.log(app.data);
-	  console.log(app.pet);
-	  return $.ajax({
-	    url: app.api + '/pets/' + app.pet.id,
-	    method: 'GET',
-	    headers: {
-	      Authorization: 'Token token=' + app.user.token
-	    },
-	    data: data
-	  });
-	};
 
+	// const getPetsById = function(data) {
+	//   return $.ajax({
+	//     url: app.api + '/pets/' + app.pet.id,
+	//     method: 'GET',
+	//     headers: {
+	//       Authorization: 'Token token=' + app.user.token
+	//     },
+	//     data,
+	//   });
+	// };
+
+
+	//displays all the pets
 	var showPets = function showPets() {
 	  return $.ajax({
 	    url: app.api + '/pets',
@@ -320,18 +332,19 @@ webpackJsonp([0],[
 	  });
 	};
 
-	var updatePet = function updatePet(data, id) {
-	  console.log(data);
-	  console.log(app.user.token);
-	  return $.ajax({
-	    url: app.api + '/pets/' + id,
-	    method: 'PATCH',
-	    headers: {
-	      Authorization: 'Token token=' + app.user.token
-	    },
-	    data: data
-	  });
-	};
+	// const updatePet = function(data, id) {
+	//   return $.ajax({
+	//     url: app.api + '/pets/' + id,
+	//     method: 'PATCH',
+	//     headers: {
+	//       Authorization: 'Token token=' + app.user.token,
+	//     },
+	//     data,
+	//   });
+	//
+	// };
+
+	//updates the pet to having the rabies shot
 	var patchPet = function patchPet(id, isRabies) {
 	  return $.ajax({
 	    url: app.api + '/pets/' + id,
@@ -346,6 +359,8 @@ webpackJsonp([0],[
 	    }
 	  });
 	};
+
+	//update the pet to being declawed
 	var patchDeclawed = function patchDeclawed(id, isDeclawed) {
 	  return $.ajax({
 	    url: app.api + '/pets/' + id,
@@ -361,6 +376,7 @@ webpackJsonp([0],[
 	  });
 	};
 
+	//update the pet to being feral
 	var patchFeral = function patchFeral(id, isFeral) {
 	  return $.ajax({
 	    url: app.api + '/pets/' + id,
@@ -376,6 +392,7 @@ webpackJsonp([0],[
 	  });
 	};
 
+	//update the pet to being neutered
 	var patchNeutered = function patchNeutered(id, isNeutered) {
 	  return $.ajax({
 	    url: app.api + '/pets/' + id,
@@ -391,16 +408,7 @@ webpackJsonp([0],[
 	  });
 	};
 
-	// const deleteEntry = function (id){
-	//   return $.ajax ({
-	//     url: app.api + '/entries/' + id,
-	//     method: 'DELETE',
-	//     headers: {
-	//       Authorization: 'Token token=' + app.user.token
-	//     },
-	//   });
-	// };
-
+	//removes the pet from the database
 	var removePet = function removePet(id) {
 	  return $.ajax({
 	    url: app.api + '/pets/' + id,
@@ -411,6 +419,7 @@ webpackJsonp([0],[
 	  });
 	};
 
+	//logs the user out of the database
 	var signOut = function signOut() {
 	  return $.ajax({
 	    url: app.api + '/sign-out/' + app.user.id,
@@ -421,14 +430,13 @@ webpackJsonp([0],[
 	  });
 	};
 
+	//sends the ajax functions to grab in
 	module.exports = {
 	  signUp: signUp,
 	  signIn: signIn,
 	  signOut: signOut,
 	  changePassword: changePassword,
 	  createPet: createPet,
-	  getPetsById: getPetsById,
-	  updatePet: updatePet,
 	  removePet: removePet,
 	  showPets: showPets,
 	  patchPet: patchPet,
@@ -468,6 +476,7 @@ webpackJsonp([0],[
 	  }
 	});
 
+	//clears the forms after the modol submit button is triggered
 	$.fn.clearForm = function () {
 	  return this.each(function () {
 	    var type = this.type,
@@ -477,6 +486,8 @@ webpackJsonp([0],[
 	    }
 	    if (type === 'text' || type === 'password' || tag === 'textarea') {
 	      this.value = '';
+	    } else if (type === "date") {
+	      this.value = '';
 	    } else if (type === 'checkbox' || type === 'radio') {
 	      this.checked = false;
 	    } else if (tag === 'select') {
@@ -484,34 +495,32 @@ webpackJsonp([0],[
 	    }
 	  });
 	};
+
+	// success test that tests if CRUD was successful
 	var success = function success(data) {
 	  $('#change-password').clearForm();
 	  $('#edit-pet').clearForm();
 	  $('#delete-pet').clearForm();
 	  $('#sign-up').clearForm();
-	  if (data) {
-	    console.log(data);
-	  }
+	  if (data) {}
 	};
+
+	//check for patch success
 	var patchSuccess = function patchSuccess(data) {
 	  $('.pets-container').html('');
 
+	  //load the handlebars which loads the handlebars template into the container
 	  var viewPatch = __webpack_require__(8);
 	  $('.pets-container').html(viewPatch({
 	    pets: data.pets
 	  }));
 	};
 
+	//checks if ajax was successful
+	//logs an error if it was not
 	var failure = function failure(error) {
 	  console.error(error);
 	};
-	// const onSuccess = function (data) {
-	//   if (data.pet) {
-	//     console.log(data.pet);
-	//   } else {
-	//     console.table(data.pets);
-	//   }
-	// };
 
 	//remove sign in and sign up links from drop down
 	//make disabled links enable to Profile and calendar
@@ -524,15 +533,13 @@ webpackJsonp([0],[
 	  $('#display-pets').addClass('enable-links');
 	  $('#edit').addClass('enable-links');
 	  $('#sign-in').clearForm();
-	  console.log(app);
 	};
 
 	//clear the forms
-	//switch profile, calendar, get-pets, get-pets-id, updatePet to inactive
+	//disable view pets and create pets
 	//re-enable sign-in and sign-out to be displayed on drop down
 	var signOutSuccess = function signOutSuccess() {
 	  delete app.user;
-	  console.log(app);
 	  $('.register').css("display", "initial");
 	  $('.sign-in').css("display", "initial");
 	  $('#profile').removeClass('enable-links');
@@ -544,18 +551,14 @@ webpackJsonp([0],[
 	var createPetSuccess = function createPetSuccess(data) {
 	  app.pet = data.pet;
 	  $('#create-pet').clearForm();
-	  console.log(data.pet.name);
 	};
+
+	//loads the handlebars that will show the pets
 	var showPetsSuccess = function showPetsSuccess(data) {
 	  var displayPets = __webpack_require__(28);
-	  console.log(data);
 	  $('.pet-display-append').html(displayPets({
 	    pets: data.pets
 	  }));
-	  // const displayHeaders = require('../templates/headers-display.handlebars');
-	  // $('.headers-display-append').html(displayHeaders({
-	  //   pets:data.pets
-	  // }));
 	};
 
 	module.exports = {
