@@ -44,17 +44,6 @@ const success = (data) => {
   }
 };
 
-//check for patch success
-const patchSuccess = (data) => {
-  $('.pet-container').html('');
-
-  //load the handlebars which loads the handlebars template into the container
-  const viewPatch = require('../templates/headers-display.handlebars');
-  $('.pet-container').html(viewPatch({
-    pets: data.pets
-  }));
-};
-
 //checks if ajax was successful
 //logs an error if it was not
 const failure = (error) => {
@@ -110,5 +99,4 @@ module.exports = {
   signOutSuccess,
   createPetSuccess,
   showPetsSuccess,
-  patchSuccess
 };

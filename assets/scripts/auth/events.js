@@ -92,7 +92,7 @@ const onPatchPet = function onPatchPet(id) {
 const onPatchFeral = function onPatchFeral(id) {
   let isFeral = true;
   api.patchFeral(id, isFeral)
-    .done(ui.patchSuccess(id))
+    .done(ui.success(id))
     .fail(ui.failure);
 };
 
@@ -100,7 +100,7 @@ const onPatchFeral = function onPatchFeral(id) {
 const onPatchNeutered = function onPatchDeclawed(id) {
   let isNeutered = true;
   api.patchDeclawed(id, isNeutered)
-    .done(ui.patchSuccess(id))
+    .done(ui.success(id))
     .fail(ui.failure);
 };
 
