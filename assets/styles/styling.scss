@@ -45,5 +45,16 @@ body {
 }
 
 .button-group {
+  width: 100%;
   display: inline-flex;
+  background: red;
+}
+
+.col-hbs {
+  margin: white solid 2px;
+  padding: 20px;
+}
+
+.flex-grid {
+  margin: 0 0 20px 0;
 }

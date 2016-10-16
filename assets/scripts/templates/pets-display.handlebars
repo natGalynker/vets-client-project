@@ -13,21 +13,22 @@
     <h3 class="col-hbs">{{this.gender}}</h3>
     <h3 class="col-hbs">{{this.breed}}</h3>
 </div>
-  <div class="button-group">
-  <form class="update-vaccine-form patch-button" data-id="{{id}}">
+  <div class="button-group flex-grid-fifths">
+  <form class="update-vaccine-form patch-button col-hbs" data-id="{{id}}">
     <input name="submit" type="submit" class="update-vaccinne-btn" value="Got a shot!">
   </form>
-    <form class="update-feral-form patch-button" data-id="{{id}}">
+    <form class="update-feral-form patch-button col-hbs" data-id="{{id}}">
     <input name="pet[feral]" type="submit" class="update-feral-btn" value="Not Feral!">
   </form>
-    <form class="update-neutered-form patch-button" data-id="{{id}}">
+    <form class="update-neutered-form patch-button col-hbs" data-id="{{id}}">
     <input name="pet[neutered]" type="submit" class="update-neutered-btn" value="Neutered!!">
   </form>
-    <form class="update-declawed-form patch-button" data-id="{{id}}">
+    <form class="update-declawed-form patch-button col-hbs" data-id="{{id}}">
     <input name="pet[declawed]" type="submit" class="update-declawed-btn" value="Declawed!!!">
   </form>
-  <form class="delete-pet-form patch-button" data-id="{{id}}">
-    <input name="submit" type="submit" class="delete-pet-btn" value="Remove Pet">
+  <form class="delete-pet-form patch-button col-hbs" data-id="{{id}}">
+    <i type="submit" class="delete-pet-btn fa fa-trash-o fa-lg" aria-hidden="true"></i>
+    {{!-- <input name="submit" type="submit" class="delete-pet-btn" value="Remove Pet"> --}}
   </form>
 </div>
 {{/each}}
