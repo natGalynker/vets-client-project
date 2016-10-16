@@ -31,6 +31,45 @@
     <input name="submit" type="submit" class="delete-pet-btn" value="Remove Pet">
   </form>
 </div>
+
+
+<li id="edit" data-toggle="modal" data-target="#editPetModal" class="edit-pet"><a href="#">Edit</a></li>
+<div class="main-container">
+  <div class="form-container">
+    <div class="modal fade" id="editPetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="editPetLabel">Sign-Up</h4>
+          </div>
+        <div class="modal-body">
+            <form id="edit-pet" action="#" data-id="{{id}}">
+                <div class="patch">
+                    <legend>
+                    <input type="text" class="form-control pet-edit"
+                      placeholder="Name of Old Owner">
+                    <input type="text" class="form-control pet-edit"
+                      placeholder="Name of Old Owner" name="pet[owner_name]">
+                    </legend>
+                    <legend>
+                      <input type="text" class="form-control pet-edit"
+                      placeholder="Old Pet Name">
+                      <input type="text" name="pet[name]" class="form-control pet-edit"
+                      placeholder="New Pet Name">
+                    </legend>
+                      <div class="modal-footer">
+                        <input type="button" class="btn btn-default" value="close" data-dismiss="modal">
+                        <input id="update-pet" type="submit" value="submit">
+                      </div>
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {{/each}}
 
 
