@@ -1,24 +1,32 @@
+<div class="pet-headers flex-grid-fifths">
+<h2 class="col-hbs">Pet Name</h2>
+<h2 class ="col-hbs">Owner Name</h2>
+<h2 class="col-hbs">Date of Birth</h2>
+<h2 class="col-hbs">Gender</h2>
+<h2 class="col-hbs">Breed</h2>
+</div>
   {{#each pets}}
-<div class = "pet-values">
-    <h2>Name:{{this.name}}</h2>
-    <h2>Owner Name{{this.owner_name}}</h2>
-    <h2>DOB{{this.born_on}}</h2>
-    <h2>Gender{{this.gender}}</h2>
-    <h2>Breed{{this.breed}}</h2>
-  <form class="update-vaccine-form" data-id="{{id}}">
+<div class = "pet-values flex-grid-fifths">
+    <h3 class="col-hbs">{{this.name}}</h3>
+    <h3 class ="col-hbs">{{this.owner_name}}</h3>
+    <h3 class="col-hbs">{{this.born_on}}</h3>
+    <h3 class="col-hbs">{{this.gender}}</h3>
+    <h3 class="col-hbs">{{this.breed}}</h3>
+</div>
+  <div class="button-group">
+  <form class="update-vaccine-form patch-button" data-id="{{id}}">
     <input name="submit" type="submit" class="update-vaccinne-btn" value="Got a shot!">
   </form>
-    <form class="update-feral-form" data-id="{{id}}">
+    <form class="update-feral-form patch-button" data-id="{{id}}">
     <input name="pet[feral]" type="submit" class="update-feral-btn" value="Not Feral!">
   </form>
-    <form class="update-neutered-form" data-id="{{id}}">
+    <form class="update-neutered-form patch-button" data-id="{{id}}">
     <input name="pet[neutered]" type="submit" class="update-neutered-btn" value="Neutered!!">
   </form>
-  <br></br>
-    <form class="update-declawed-form" data-id="{{id}}">
+    <form class="update-declawed-form patch-button" data-id="{{id}}">
     <input name="pet[declawed]" type="submit" class="update-declawed-btn" value="Declawed!!!">
   </form>
-  <form class="delete-pet-form" data-id="{{id}}">
+  <form class="delete-pet-form patch-button" data-id="{{id}}">
     <input name="submit" type="submit" class="delete-pet-btn" value="Remove Pet">
   </form>
 </div>
