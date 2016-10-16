@@ -1,12 +1,12 @@
-html,
-  body {
-    margin: 0;
-    height: 100%;
+html {
+//   body {
+  margin: 0;
+  height: 100%;
 }
 
-.test {
+body {
   background-image:
-    linear-gradient(to bottom,
+    linear-gradient(to top right,
     #c6eccc,
     #c5eff3);
     height: 100%;
@@ -17,9 +17,49 @@ html,
   background-image: url('./images/pets.jpg');
   background-repeat: no-repeat;
   background-size: contain;
+  bottom: 5%;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row;
   height: 60%;
-  position: absolute;
-  width: 60%;
   left: 7%;
-  bottom: 10%;
+  margin: 0;
+  order: 1;
+  padding: 60px;
+  position: absolute;
+  -webkit-flex-flow: row;
+  justify-content: center space-around;
+  width: 60%;
 }
+
+// .flex-container {
+//   display: flex;
+//   justify-content: space-around;
+//   border: black 10px;
+//   height: 100%;
+// }
+// .aside-2 {
+//   border: 10px;
+//   float: right;
+//   height: 100%
+// }
+.pet-container {
+  // order: 3;
+  align-items: center;
+  height: 100%;
+  width: 80%;
+  margin: auto 10%;
+}
+.pet-values {
+  background: pink;
+  left: 50%;
+  top: 50%;
+  // flex-flow: column;
+  // order: 2;
+  // position: absolute;
+
+}
+
+// @media all and (min-width: 800px) {
+//     .aside-2 { order: 3; }
+// }

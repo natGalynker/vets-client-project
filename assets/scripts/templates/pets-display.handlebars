@@ -1,10 +1,10 @@
   {{#each pets}}
-<div class = "pet values">
-    <h2><large>Name{{this.name}}</large></h2>
-    <h2><large>Owner Name{{this.owner_name}}</large></h2>
-    <h2><large> DOB{{this.born_on}}</large></h2>
-    <h2><large> Gender{{this.gender}}</large></h2>
-    <h2><large> Breed{{this.breed}}</large></h2>
+<div class = "pet-values">
+    <h2>Name:{{this.name}}</h2>
+    <h2>Owner Name{{this.owner_name}}</h2>
+    <h2>DOB{{this.born_on}}</h2>
+    <h2>Gender{{this.gender}}</h2>
+    <h2>Breed{{this.breed}}</h2>
   <form class="update-vaccine-form" data-id="{{id}}">
     <input name="submit" type="submit" class="update-vaccinne-btn" value="Got a shot!">
   </form>
@@ -21,6 +21,7 @@
   <form class="delete-pet-form" data-id="{{id}}">
     <input name="submit" type="submit" class="delete-pet-btn" value="Remove Pet">
   </form>
+</div>
 {{/each}}
 
 

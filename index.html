@@ -43,23 +43,25 @@
     </div>
     <!-- /.container-fluid -->
   </nav>
-  <div class="test">
+    <div class="flex-container">
     <!--Holds the animal image on the landing page  -->
-    <div class="landing-info">
-      <section class= "about">
+      <div class="landing-info">
+        <section class= "about">
           <h1>Welcome to Pet Log!</h1>
           <h3>Where you can keep all your pets in one place. Regardless if they are the
             furry ones, scaly ones, sweet ones, or feathered ones. This is not a place of
           discrimination. Login So you can see what we are about!</h3>
-      </section>
-    </div>
-    <div class="main">
-      <!--holds the pets information that will load information from the
-    handlebars template. have it view in a sidebar to the right -->
-
-  <div class="pet-container">
-
-  </div>
+        </section>
+        <div class="main">
+        </div>
+      </div>
+        <!--holds the pets information that will load information from the
+        handlebars template. have it view in a sidebar to the right -->
+        <div class="pet-container col-md-8-pull right">
+        <!--this is where the pets info gets displayed  -->
+        </div>
+      </div>
+    <!--Modals start here  -->
   <div class="main-container">
     <div class="form-container">
       <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -276,13 +278,6 @@
       </div>
     </section>
   </div>
-  <h1>About the site</h1>
-  <article>
-    <div class="photo-vet">
-      <div class="quote-vet">
-      </div>
-    </div>
-  </article>
 </body>
 
 </html>

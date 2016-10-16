@@ -507,11 +507,11 @@ webpackJsonp([0],[
 
 	//check for patch success
 	var patchSuccess = function patchSuccess(data) {
-	  $('.pets-container').html('');
+	  $('.pet-container').html('');
 
 	  //load the handlebars which loads the handlebars template into the container
 	  var viewPatch = __webpack_require__(8);
-	  $('.pets-container').html(viewPatch({
+	  $('.pet-container').html(viewPatch({
 	    pets: data.pets
 	  }));
 	};

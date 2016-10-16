@@ -46,11 +46,11 @@ const success = (data) => {
 
 //check for patch success
 const patchSuccess = (data) => {
-  $('.pets-container').html('');
+  $('.pet-container').html('');
 
   //load the handlebars which loads the handlebars template into the container
   const viewPatch = require('../templates/headers-display.handlebars');
-  $('.pets-container').html(viewPatch({
+  $('.pet-container').html(viewPatch({
     pets: data.pets
   }));
 };
@@ -96,7 +96,9 @@ const createPetSuccess = (data) => {
 //loads the handlebars that will show the pets
 const showPetsSuccess = (data) => {
   const displayPets = require('../templates/pets-display.handlebars');
-  $('.pet-display-append').html(displayPets({
+  $('.main').css("display", "none");
+  $('.landing-info').css("display", "none");
+  $('.pet-container').html(displayPets({
     pets: data.pets
   }));
 };
