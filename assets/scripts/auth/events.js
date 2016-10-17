@@ -58,15 +58,13 @@ api.showPets()
 .fail(ui.failure);
 };
 
-const onGetPetsById = function onGetPetsById(event) {
-  let data = getFormFields(this);
-  event.preventDefault();
-  api.getPetsById(data)
+const onGetPetsById = function onGetPetsById(id) {
+  api.getPetsById(id)
     .done(ui.getPetsByIdSuccess)
     .fail(ui.failure);
 };
 
-//grab the id of the pet from the database and update the pets owner or name
+// grab the id of the pet from the database and update the pets owner or name
 // const onPatchPet = function onPatchPet(id) {
 //   let isChanged = true;
 //   api.patchPet(id, isChanged)
@@ -78,14 +76,14 @@ const onGetPetsById = function onGetPetsById(event) {
 const onPatchDeclawed = function onPatchDeclawed(id) {
   let isDeclawed = true;
   api.patchDeclawed(id, isDeclawed)
-    .done(ui.patchSuccess(id))
+    .done(ui.success(id))
     .fail(ui.failure);
 };
 
 const onPatchPet = function onPatchPet(id) {
   let isRabies = true;
   api.patchPet(id, isRabies)
-    .done(ui.patchSuccess(id))
+    .done(ui.success(id))
     .fail(ui.failure);
 };
 //grab the id of the pet from the database and change feral to true
@@ -116,7 +114,7 @@ const onRemovePet = function onRemovePet(id) {
 const addHandlers = () => {
 //use jquery to target the forms for user actions
 //use jquery to target the form for creating a pet
-  $('#sign-up').on('submit', onSignUp);
+  $('#signup').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('click', onSignOut);
   $('#change-password').on('submit', onChangePassword);
@@ -131,5 +129,5 @@ module.exports = {
   onPatchDeclawed,
   onPatchPet,
   onPatchFeral,
-  onPatchNeutered
+  onPatchNeutered,
 };

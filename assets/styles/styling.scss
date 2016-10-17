@@ -39,6 +39,16 @@ body {
 .flex-grid-fifths .col-hbs {
   width: 15%;
 }
+.flex-grid-sevenths {
+  display: flex;
+  justify-content: space-between;
+  border: white 2px;
+}
+
+.flex-grid-sevenths .col-modal {
+  width: 20%;
+}
+
 
 .pet-values {
   background: pink;

@@ -10,6 +10,7 @@ $(document).on('click', '#display-pets', function(){
   authEvents.onShowPets();
 });
 
+
 //on submit submit the Patch action that changes vaccine to true
 $(document).on('submit','.update-vaccine-form', function(event){
   event.preventDefault();
@@ -18,17 +19,23 @@ $(document).on('submit','.update-vaccine-form', function(event){
 });
 
 //on submit submit the Patch action that changes declawed to true
-$(document).on('submit','.update-declawed-form', function(event){
-  event.preventDefault();
-  let id = $(this).data('id');
-  authEvents.onPatchDeclawed(id);
-});
+// $(document).on('submit','.update-declawed-form', function(event){
+//   event.preventDefault();
+//   let id = $(this).data('id');
+//   authEvents.onPatchDeclawed(id);
+// });
 
 //on submit submit the Patch action that changes feral to true
 $(document).on('submit','.update-feral-form', function(event){
   event.preventDefault();
   let id = $(this).data('id');
   authEvents.onPatchFeral(id);
+});
+
+$(document).on('click','.test-icon', function(event){
+  event.preventDefault();
+  let id = $(this).data('id');
+  authEvents.onPatchDeclawed(id);
 });
 
 //on submit submit the Patch action that neutered vaccine to true

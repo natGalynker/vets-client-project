@@ -39,6 +39,7 @@ const success = (data) => {
   $('#edit-pet').clearForm();
   $('#delete-pet').clearForm();
   $('#sign-up').clearForm();
+  $('#sign-in').clearForm();
   if (data) {
 
   }
@@ -82,6 +83,10 @@ const createPetSuccess = (data) => {
   $('#create-pet').clearForm();
 };
 
+const updatePetSuccess = (data) => {
+  app.pet = data.pet;
+  $('#edit-pet').clearForm();
+};
 //loads the handlebars that will show the pets
 const showPetsSuccess = (data) => {
   const displayPets = require('../templates/pets-display.handlebars');
@@ -99,4 +104,5 @@ module.exports = {
   signOutSuccess,
   createPetSuccess,
   showPetsSuccess,
+  updatePetSuccess,
 };
