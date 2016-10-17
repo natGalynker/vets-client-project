@@ -1,9 +1,9 @@
 <div class="pet-headers flex-grid-fifths">
-  <h2 class="col-hbs">Pet Name</h2>
-  <h2 class="col-hbs">Owner Name</h2>
-  <h2 class="col-hbs">Date of Birth</h2>
-  <h2 class="col-hbs">Gender</h2>
-  <h2 class="col-hbs">Breed</h2>
+  <h2 class="col-hbs heading">Pet Name</h2>
+  <h2 class="col-hbs heading">Owner Name</h2>
+  <h2 class="col-hbs heading">Date of Birth</h2>
+  <h2 class="col-hbs heading">Gender</h2>
+  <h2 class="col-hbs heading">Breed</h2>
 </div>
 {{#each pets}}
   <div class="pet-values flex-grid-fifths">
@@ -34,11 +34,11 @@
   </div>
 
 
-  <li id="view" data-toggle="modal" data-target=".bs-example-modal-lg" class="nav-button view" data-id"{{id}}">View Pet</li>
+  <li id="view" data-toggle="modal" data-target=".bs-example-modal-lg" class="nav-button view" data-id="{{this.id}}">View Pet</li>
 <!-- <a href="#" data-id="{{id}}">view-pet</a></li>-->
   <div class="main-container">
     <div class="form-container">
-      <div class="modal fade bs-example-modal-lg" id="viewPetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal fade bs-example-modal-lg {{this.id}}" id="{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
