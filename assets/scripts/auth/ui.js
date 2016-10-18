@@ -4,14 +4,14 @@ const app = require('../app.js');
 
 
 //toggle disabled buttons to enabled
-jQuery.fn.extend({
-  disable: function(state) {
-    return this.each(function() {
-      let $this = $(this);
-      $this.toggleClass('disabled', state);
-    });
-  }
-});
+// jQuery.fn.extend({
+//   disable: function(state) {
+//     return this.each(function() {
+//       let $this = $(this);
+//       $this.toggleClass('disabled', state);
+//     });
+//   }
+// });
 
 //clears the forms after the modol submit button is triggered
 $.fn.clearForm = function() {
@@ -39,6 +39,7 @@ const success = (data) => {
   $('#edit-pet').clearForm();
   $('#delete-pet').clearForm();
   $('#sign-up').clearForm();
+  $('#sign-in').clearForm();
   if (data) {
 
   }
@@ -82,6 +83,18 @@ const createPetSuccess = (data) => {
   $('#create-pet').clearForm();
 };
 
+const updatePetSuccess = (data) => {
+  app.pet = data.pet;
+  $('#editpet').clearForm();
+};
+
+const getPetsByIdSuccess = (data) => {
+  let showPet = require('../templates/headers-display.handlebars');
+  $('#view-pet').modal('show');
+  $('#test').empty().append(showPet(data));
+  $('.modal').appendTo($('body'));
+};
+
 //loads the handlebars that will show the pets
 const showPetsSuccess = (data) => {
   const displayPets = require('../templates/pets-display.handlebars');
@@ -99,4 +112,6 @@ module.exports = {
   signOutSuccess,
   createPetSuccess,
   showPetsSuccess,
+  getPetsByIdSuccess,
+  updatePetSuccess
 };

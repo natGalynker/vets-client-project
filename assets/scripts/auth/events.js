@@ -58,10 +58,9 @@ api.showPets()
 .fail(ui.failure);
 };
 
-const onGetPetsById = function onGetPetsById(event) {
-  let data = getFormFields(this);
+const onGetPetsById = function onGetPetsById(id) {
   event.preventDefault();
-  api.getPetsById(data)
+  api.getPetsById(id)
     .done(ui.getPetsByIdSuccess)
     .fail(ui.failure);
 };

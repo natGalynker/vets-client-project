@@ -46,16 +46,15 @@ const createPet = function(data) {
 };
 
 
-// const getPetsById = function(data) {
-//   return $.ajax({
-//     url: app.api + '/pets/' + app.pet.id,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token
-//     },
-//     data,
-//   });
-// };
+const getPetsById = function(id) {
+  return $.ajax({
+    url: app.api + '/pets/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+  });
+};
 
 
 //displays all the pets
@@ -71,17 +70,16 @@ const showPets = function() {
 };
 
 
-// const updatePet = function(data, id) {
-//   return $.ajax({
-//     url: app.api + '/pets/' + id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//     data,
-//   });
-//
-// };
+const updatePet = function(data, id) {
+  return $.ajax({
+    url: app.api + '/pets/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data,
+  });
+};
 
 //updates the pet to having the rabies shot
 const patchPet = function(id, isRabies) {
@@ -180,5 +178,7 @@ module.exports = {
   patchPet,
   patchDeclawed,
   patchFeral,
-  patchNeutered
+  patchNeutered,
+  getPetsById,
+  updatePet
 };

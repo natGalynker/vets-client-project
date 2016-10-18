@@ -1,90 +1,52 @@
-{{#each pets}}
-<!-- <div class="show pets {{id}}">
-  <form class="patch-feral-form">
-    <input name="submit" type="submit" class="update-feral-btn" data-id="{{id}}" value="Is Feral">
-  </form>
-  <form class="patch-rabies-form">
-    <input name="pet[rabes_shot]" type="submit" class="update-shot-btn" data-id="{{id}}" value="Got a Shot!">
-  </form>
-  <form class="patch-declawed-form">
-    <input name="pet[declawed]" type="submit" class="update-declawed-btn" data-id="{{id}}" value="Is Declawed">
-  </form>
-  <form class="patch-neutered-form">
-    <input name="submit" type="submit" class="update-neutered-btn" data-id="{{id}}" value="Is Neutered!">
-  </form>
+<div class="pet-show">
+<div class="pet-values flex-grid-sevenths">
+  <h5 class="col-modal">
+      Pet Name
+      <span></span>
+      <br>
+      {{pet.name}}</h5>
+  <h5 class="col-modal">
+      Owner Name
+      <span></span>
+      <br>
+      {{pet.owner_name}}</h5>
+  <h5 class="col-modal">
+      Date of Birth
+      <span></span>
+      <br>
+      {{pet.born_on}}</h5>
+  <h5 class="col-modal">
+      Pet Gender
+      <span></span>
+      <br>
+      {{pet.gender}}</h5>
+  <h5 class="col-modal">
+      Pet Breed
+      <span></span>
+      <br>
+      {{pet.breed}}</h5>
 </div>
-
-
-<div class = "edit-pet">
-  <li class="btn btn-lg edit" data-toggle= "modal" data-target="#editPetModal"><a href="#" id = "edit">Edit Pet</a></li>
-  <div class="modal fade" id="editPetModal" tabindex="-1" role="dialog" aria-labelledby="editPeteModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="editPetModalLabel"><label>Update Pet</label></h4>
-        </div>
-        <div class="modal-body">
-            <form id="edit-pet" action="#" data-id="{{id}}">
-                <div class="patch">
-                    <input placeholder="Pet-id"id="edit-pet-id" type="text" name="pet[id]">
-                    <legend>
-                    <input type="text" class="form-control pet-edit"
-                      placeholder="Name of Old Owner">
-                    <input type="text" class="form-control pet-edit"
-                      placeholder="Name of Old Owner" name="pet[owner_name]">
-                    </legend>
-                    <legend>
-                      <input type="text" class="form-control pet-edit"
-                      placeholder="Old Pet Name">
-                      <input type="text" name="pet[name]" class="form-control pet-edit"
-                      placeholder="New Pet Name">
-                    </legend>
-                      <div class="modal-footer">
-                        <input type="button" class="btn btn-default" value="close" data-dismiss="modal">
-                        <input id="update-pet" type="submit" value="submit">
-                      </div>
-                  </div>
-              </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-<!-- {{#each entries}}
-
-<div class = "image-show-entry">
-<div class="show-each-entry">
-
-  <h4>  {{goal}} </h4>
-  <h5> {{description}} </h5>
-  <h5> {{finishBy}} </h5>
-  <h5> {{location}} </h5>
-  <h5><a href="{{url}}">More Info</a></h5>
-
-  <form class="show-entry-form">
-    <input name="submit" type="submit" class="complete-entry-btn" data-id="{{_id}}" value="I did it!">
-    <input name="submit" type="submit" class="delete-entry-btn" data-id="{{_id}}" value="I gave up.. :(">
-  </form>
-  <! <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#circleModal">
-  More Info
-</button> -->
-<!-- </div>
+<hr>
+<div class="pet-values flex-grid-sevenths">
+  <h5 class="col-modal">
+      Neutered
+      <span></span>
+      <br>
+      {{pet.neutered}}</h5>
+  <h5 class="col-modal">
+      Feral
+      <span></span>
+      <br>{{pet.feral}}</h5>
+  <h5 class="col-modal">
+      Declawed
+      <span></span>
+      <br>
+      {{pet.declawed}}</h5>
+  <h5 class="col-modal">
+        Vaccinated
+        <span></span>
+        <br>
+        {{pet.rabes_shot}}
+  </h5>
 </div>
-<!<div class="modal fade" id="circleModal" tabindex="-1" role="dialog" aria-labelledby="circleModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content-circle">
-        <h4 class="modal-title" id="circleModalLabel">Goal Info</h4>
-        More info Would go here about each goal
-      <div class="button-group goal-btns">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Goal complete!</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!--
-{{/each}} -->
-
-{{/each}}
+</div>
