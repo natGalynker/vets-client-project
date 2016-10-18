@@ -30,6 +30,16 @@ body {
   position: absolute;
   width: 60%;
 }
+.flex-grid-sevenths {
+  display: flex;
+  justify-content: space-between;
+  border: white 2px;
+}
+
+.flex-grid-sevenths .col-modal {
+  width: 20%;
+}
+
 
 .flex-grid-fifths {
   display: flex;
