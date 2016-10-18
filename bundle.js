@@ -462,8 +462,8 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  // api: 'https://pets-vets-api.herokuapp.com'
-	  api: 'http://localhost:3000'
+	  api: 'https://pets-vets-api.herokuapp.com'
+	  // api: 'http://localhost:3000'
 	};
 
 	module.exports = app;
